@@ -1,0 +1,281 @@
+{
+  "task": "held_out_relation_typed_triple_retrieval",
+  "dataset": "Hetionet full-source structural sample",
+  "model": "GraphSAGE + relation query",
+  "comparison": "GNN only vs BFS only vs validation-tuned BFS+GNN",
+  "methods": {
+    "gnn_only": {
+      "test": {
+        "hits@1": 0.1796875,
+        "recall@1": 0.14317172181372548,
+        "mrr@1": 0.1796875,
+        "hits@3": 0.2890625,
+        "recall@3": 0.2181937050388337,
+        "mrr@3": 0.22265625,
+        "hits@5": 0.3828125,
+        "recall@5": 0.30628302457346573,
+        "mrr@5": 0.24414062500000003,
+        "hits@10": 0.5546875,
+        "recall@10": 0.46073636841100074,
+        "mrr@10": 0.26795014880952384
+      },
+      "validation": {
+        "hits@1": 0.09375,
+        "recall@1": 0.056380208333333334,
+        "mrr@1": 0.09375,
+        "hits@3": 0.265625,
+        "recall@3": 0.180859375,
+        "mrr@3": 0.16796875,
+        "hits@5": 0.390625,
+        "recall@5": 0.2982886904761905,
+        "mrr@5": 0.196484375,
+        "hits@10": 0.5859375,
+        "recall@10": 0.4733137738997114,
+        "mrr@10": 0.22240203373015877
+      }
+    },
+    "bfs_only": {
+      "test": {
+        "hits@1": 0.1171875,
+        "recall@1": 0.11328125,
+        "mrr@1": 0.1171875,
+        "hits@3": 0.2578125,
+        "recall@3": 0.21983225108225107,
+        "mrr@3": 0.18098958333333331,
+        "hits@5": 0.3359375,
+        "recall@5": 0.30517789502164505,
+        "mrr@5": 0.19856770833333331,
+        "hits@10": 0.4140625,
+        "recall@10": 0.38821360930735926,
+        "mrr@10": 0.2094029017857143
+      },
+      "validation": {
+        "hits@1": 0.1328125,
+        "recall@1": 0.125,
+        "mrr@1": 0.1328125,
+        "hits@3": 0.2578125,
+        "recall@3": 0.24375,
+        "mrr@3": 0.18489583333333331,
+        "hits@5": 0.3359375,
+        "recall@5": 0.31015625,
+        "mrr@5": 0.20325520833333333,
+        "hits@10": 0.453125,
+        "recall@10": 0.42213541666666665,
+        "mrr@10": 0.21744171626984127
+      }
+    },
+    "bfs_gnn": {
+      "test": {
+        "hits@1": 0.171875,
+        "recall@1": 0.14750744047619047,
+        "mrr@1": 0.171875,
+        "hits@3": 0.296875,
+        "recall@3": 0.26540516774891776,
+        "mrr@3": 0.22786458333333331,
+        "hits@5": 0.3984375,
+        "recall@5": 0.33704765286796534,
+        "mrr@5": 0.2501302083333333,
+        "hits@10": 0.5,
+        "recall@10": 0.43349656624013244,
+        "mrr@10": 0.2636470734126984
+      },
+      "validation": {
+        "hits@1": 0.1484375,
+        "recall@1": 0.1328125,
+        "mrr@1": 0.1484375,
+        "hits@3": 0.265625,
+        "recall@3": 0.24088541666666666,
+        "mrr@3": 0.19791666666666666,
+        "hits@5": 0.4140625,
+        "recall@5": 0.3809895833333333,
+        "mrr@5": 0.23151041666666666,
+        "hits@10": 0.5390625,
+        "recall@10": 0.47901785714285716,
+        "mrr@10": 0.24813988095238093
+      }
+    }
+  },
+  "calibration": {
+    "alpha": 0.5,
+    "objective": "validation_mrr@10",
+    "grid": [
+      {
+        "alpha": 0.0,
+        "validation_mrr": 0.21744171626984127,
+        "validation_hits1": 0.1328125
+      },
+      {
+        "alpha": 0.05,
+        "validation_mrr": 0.22747085813492063,
+        "validation_hits1": 0.140625
+      },
+      {
+        "alpha": 0.1,
+        "validation_mrr": 0.24218439980158732,
+        "validation_hits1": 0.1640625
+      },
+      {
+        "alpha": 0.15,
+        "validation_mrr": 0.23176773313492066,
+        "validation_hits1": 0.1484375
+      },
+      {
+        "alpha": 0.2,
+        "validation_mrr": 0.2375186011904762,
+        "validation_hits1": 0.1484375
+      },
+      {
+        "alpha": 0.25,
+        "validation_mrr": 0.23994915674603173,
+        "validation_hits1": 0.15625
+      },
+      {
+        "alpha": 0.3,
+        "validation_mrr": 0.24271453373015872,
+        "validation_hits1": 0.15625
+      },
+      {
+        "alpha": 0.35,
+        "validation_mrr": 0.24323846726190476,
+        "validation_hits1": 0.1484375
+      },
+      {
+        "alpha": 0.4,
+        "validation_mrr": 0.2466889880952381,
+        "validation_hits1": 0.1484375
+      },
+      {
+        "alpha": 0.45,
+        "validation_mrr": 0.24679439484126986,
+        "validation_hits1": 0.1484375
+      },
+      {
+        "alpha": 0.5,
+        "validation_mrr": 0.24813988095238093,
+        "validation_hits1": 0.1484375
+      },
+      {
+        "alpha": 0.55,
+        "validation_mrr": 0.23313802083333332,
+        "validation_hits1": 0.109375
+      },
+      {
+        "alpha": 0.6,
+        "validation_mrr": 0.2295076884920635,
+        "validation_hits1": 0.1015625
+      },
+      {
+        "alpha": 0.65,
+        "validation_mrr": 0.22633928571428572,
+        "validation_hits1": 0.1015625
+      },
+      {
+        "alpha": 0.7,
+        "validation_mrr": 0.21949714781746033,
+        "validation_hits1": 0.09375
+      },
+      {
+        "alpha": 0.75,
+        "validation_mrr": 0.21941654265873015,
+        "validation_hits1": 0.09375
+      },
+      {
+        "alpha": 0.8,
+        "validation_mrr": 0.21722160218253966,
+        "validation_hits1": 0.09375
+      },
+      {
+        "alpha": 0.85,
+        "validation_mrr": 0.21952504960317462,
+        "validation_hits1": 0.1015625
+      },
+      {
+        "alpha": 0.9,
+        "validation_mrr": 0.2252139136904762,
+        "validation_hits1": 0.109375
+      },
+      {
+        "alpha": 0.95,
+        "validation_mrr": 0.23242807539682542,
+        "validation_hits1": 0.1171875
+      },
+      {
+        "alpha": 1.0,
+        "validation_mrr": 0.22240203373015877,
+        "validation_hits1": 0.09375
+      }
+    ],
+    "validation_queries": 128,
+    "uses_test_labels": false,
+    "fallback_to_bfs": false,
+    "chosen_validation_mrr": 0.24813988095238093
+  },
+  "query_count": 128,
+  "evaluation_query_cap_per_split": 128,
+  "validation_query_count": 128,
+  "candidate_counts_test": {
+    "min": 2,
+    "median": 218.0,
+    "max": 270
+  },
+  "test_triples": 1293,
+  "validation_triples": 1293,
+  "train_triples": 7414,
+  "ks": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "seed": 42,
+  "fusion_formula": "alpha*GNN_rank_percentile + (1-alpha)*BFS_rank_percentile",
+  "candidate_rule": "same relation-compatible tails excluding train links; validation positives also filtered on test",
+  "bfs_graph": "train triples only, undirected adjacency; distance then degree then ID",
+  "gnn_retrieval": "exact all-candidate relation-conditioned score (NOT HNSW)",
+  "notes": [
+    "All rankings and alpha selection obey the original v6 method.",
+    "This is a transductive held-out link task, not clinical validation.",
+    "Sampling from full graph precedes train/test split.",
+    "Only validation was used to select alpha; no test tuning.",
+    "No artificial cluster-label feature added.",
+    "Reduced Python overhead for 100k triples; semantically equivalent to v6."
+  ],
+  "input_triples": 10000,
+  "node_count": 495,
+  "relation_count": 24,
+  "feature_mode": "kind_name",
+  "epochs": 25,
+  "training_metrics": {
+    "train_loss": 1.3653247356414795,
+    "epochs": 25,
+    "seed": 42,
+    "train_triples": 7414,
+    "train_positives_after_symmetric_augmentation": 7723,
+    "validation_triples": 1293,
+    "test_triples": 1293,
+    "embedding_dim": 16,
+    "n_relations": 24,
+    "train_adjacency_pairs": 6391,
+    "max_ranking_positives_per_epoch": 4096,
+    "ranking_eligible_training_positives": 7720,
+    "feature_dim": 75,
+    "feature_mode": "kind_name",
+    "negative_sampling": "same target node type; exclude training positive triples",
+    "negative_samples_per_positive": 4,
+    "training_objective": "sampled softmax ranking (one positive, N typed negatives)",
+    "model": "GraphSAGE encoder + relation-translated cosine query"
+  },
+  "runtime_seconds": 5.13,
+  "sample_nodes_sha256": "a8f9d23919a5a0b583294f5783e6b8c0f9997d1de25b60cdc1ed34bf139979ab",
+  "sample_edges_sha256": "9839f413c0073cfc6d324602ea847d88891c0f36791aaeb6671a27ca25e1b35d",
+  "train_max_positives_per_epoch": 4096,
+  "evaluation_notes": [
+    "Node names and kinds are unmodified original Hetionet attributes.",
+    "Train-graph only embeddings and BFS; pair-disjoint held-out triples.",
+    "Validation MRR@10 chooses alpha; held-out test not used for tuning.",
+    "All candidate tails of relation-compatible type, exact GNN search (not Voyager).",
+    "Full source sampled structurally BEFORE split. Different sizes change query/candidate distributions.",
+    "Unobserved biological edges can be unlabeled positives; results are not clinical truth.",
+    "Positive ranking batch capped per epoch; adjacency uses all Train triples."
+  ]
+}
