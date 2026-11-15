@@ -1,0 +1,30 @@
+{
+  "dataset": "Synthetic relation-typed 30-node / 120-triple test graph (NOT Hetionet)",
+  "configuration": {
+    "epochs": 25,
+    "seed": 42,
+    "random_repeats": 20
+  },
+  "verification_scope": "True JAX numerical training + exact ranking; the Voyager method uses a stub delegating to exact",
+  "train_triples": 84,
+  "validation_triples": 18,
+  "test_triples": 18,
+  "train_loss": 0.7027865052223206,
+  "training_objective": "sampled softmax ranking (one positive, N typed negatives)",
+  "query_count": 20,
+  "hits_at_10": {
+    "gnn_exact": 0.65,
+    "gnn_voyager": 0.65,
+    "gnn_no_relation": 0.85,
+    "graph_bfs": 0.5,
+    "random": 0.8525
+  },
+  "mrr_at_10": {
+    "gnn_exact": 0.1355357142857143,
+    "gnn_voyager": 0.1355357142857143,
+    "gnn_no_relation": 0.20672619047619048,
+    "graph_bfs": 0.07136904761904762,
+    "random": 0.27473015873015877
+  },
+  "warning": "Toy dataset results do not establish improved retrieval. No real Polars/Voyager binary, Hetionet, Ollama, or Docker integration tested."
+}

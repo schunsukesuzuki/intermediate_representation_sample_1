@@ -1,0 +1,193 @@
+# v14 Mac Metal: Ollama runs NATIVELY on macOS; only API/UI/JAX run in Docker.
+# First start macOS Ollama, then docker compose up --build -d.
+# Docker CPU fallback: docker compose -f compose.yaml -f compose.cpu.yaml up --build -d
+services:
+  # Always runs first. For synthetic data it exits without network access.
+  # For Hetionet it validates cached CSVs or downloads/converts once.
+  prepare-data:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    restart: "no"
+    environment:
+      GNN_RAG_DATASET: ${GNN_RAG_DATASET:-hetionet}
+      GNN_RAG_SEED: ${GNN_RAG_SEED:-42}
+      HETIONET_FOCUS: ${HETIONET_FOCUS:-Alzheimer's disease}
+      HETIONET_MAX_NODES: ${HETIONET_MAX_NODES:-5000}
+      HETIONET_TARGET_TRIPLES: ${HETIONET_TARGET_TRIPLES:-10000}
+      HETIONET_AUTO_DOWNLOAD: ${HETIONET_AUTO_DOWNLOAD:-1}
+    volumes:
+      - ./data:/app/data
+    command: ["python", "-m", "gnn_rag.compose_prepare"]
+
+  train:
+    depends_on:
+      prepare-data:
+        condition: service_completed_successfully
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    restart: "no"
+    environment:
+      JAX_PLATFORMS: cpu
+      XLA_PYTHON_CLIENT_PREALLOCATE: "false"
+      GNN_RAG_DATASET: ${GNN_RAG_DATASET:-hetionet}
+      GNN_RAG_EPOCHS: ${GNN_RAG_EPOCHS:-25}
+      GNN_RAG_SEED: ${GNN_RAG_SEED:-42}
+      GNN_RAG_RANDOM_REPEATS: ${GNN_RAG_RANDOM_REPEATS:-20}
+      GNN_RAG_EVAL_MAX_QUERIES: ${GNN_RAG_EVAL_MAX_QUERIES:-128}
+      GNN_RAG_TRAIN_MAX_POSITIVES: ${GNN_RAG_TRAIN_MAX_POSITIVES:-4096}
+      GNN_RAG_FEATURE_MODE: ${GNN_RAG_FEATURE_MODE:-kind_name}
+    volumes:
+      - ./outputs:/app/outputs
+      - ./data:/app/data:ro
+    command: ["python", "-m", "gnn_rag.compose_train"]
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    restart: unless-stopped
+    depends_on:
+      train:
+        condition: service_completed_successfully
+    environment:
+      GNN_RAG_ARTIFACTS: /app/outputs/local_rag
+      GNN_RAG_OLLAMA_URL: ${GNN_RAG_OLLAMA_URL:-http://host.docker.internal:11434}
+      GNN_RAG_OLLAMA_MODEL: ${GNN_RAG_MODEL:-qwen3:1.7b}
+      GNN_RAG_OLLAMA_TIMEOUT: ${GNN_RAG_OLLAMA_TIMEOUT:-900}
+      GNN_RAG_OLLAMA_NUM_CTX: ${GNN_RAG_OLLAMA_NUM_CTX:-8192}
+      GNN_RAG_EXPLANATION_MAX_TOKENS: ${GNN_RAG_EXPLANATION_MAX_TOKENS:-650}
+      GNN_RAG_CROSS_MAX_TOKENS: ${GNN_RAG_CROSS_MAX_TOKENS:-500}
+      GNN_RAG_EXPECT_DATASET: ${GNN_RAG_DATASET:-hetionet}
+      GNN_RAG_COMPARISON_DIR: /app/project_root
+      JAX_PLATFORMS: cpu
+      XLA_PYTHON_CLIENT_PREALLOCATE: "false"
+    volumes:
+      - ./outputs:/app/outputs:ro
+      # Fixed-name local report; no arbitrary filesystem path is accepted by the API.
+      - ./:/app/project_root
+    ports:
+      - "127.0.0.1:${GNN_RAG_PORT:-8000}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,urllib.request; data=json.load(urllib.request.urlopen('http://127.0.0.1:8000/health',timeout=3)); assert data['ok']"]
+      interval: 15s
+      timeout: 5s
+      retries: 6
+      start_period: 15s
+
+  # v14 React/Vite UI, served via nginx. /api/* is routed to the internal FastAPI.
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${GNN_RAG_UI_PORT:-5173}:80"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # Manual preparation/diagnostics. Same sampler as automatic prepare-data.
+  prepare-hetionet:
+    profiles: ["hetionet"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    restart: "no"
+    environment:
+      GNN_RAG_DATASET: hetionet
+      GNN_RAG_SEED: ${GNN_RAG_SEED:-42}
+      HETIONET_FOCUS: ${HETIONET_FOCUS:-Alzheimer's disease}
+      HETIONET_MAX_NODES: ${HETIONET_MAX_NODES:-5000}
+      HETIONET_TARGET_TRIPLES: ${HETIONET_TARGET_TRIPLES:-10000}
+      HETIONET_AUTO_DOWNLOAD: ${HETIONET_AUTO_DOWNLOAD:-1}
+    volumes:
+      - ./data:/app/data
+    command: ["python", "-m", "gnn_rag.compose_prepare"]
+
+  # Optional three-seed real Hetionet comparison. Does not overwrite live API artifacts.
+  # docker compose --profile benchmark run --build --rm benchmark
+  benchmark:
+    profiles: ["benchmark"]
+    depends_on:
+      prepare-data:
+        condition: service_completed_successfully
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    restart: "no"
+    environment:
+      JAX_PLATFORMS: cpu
+      XLA_PYTHON_CLIENT_PREALLOCATE: "false"
+    volumes:
+      - ./outputs:/app/outputs
+      - ./data:/app/data:ro
+    command: ["python", "-m", "gnn_rag.multiseed", "--epochs", "${GNN_RAG_EPOCHS:-25}", "--eval-max-queries", "${GNN_RAG_EVAL_MAX_QUERIES:-128}", "--train-max-positives", "${GNN_RAG_TRAIN_MAX_POSITIVES:-4096}", "--feature-mode", "${GNN_RAG_FEATURE_MODE:-kind_name}"]
+
+  # Optional repeatable test job; no Hetionet download or Qwen model required.
+  # docker compose --profile test run --build --rm test
+  test:
+    profiles: ["test"]
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    init: true
+    restart: "no"
+    environment:
+      JAX_PLATFORMS: cpu
+      XLA_PYTHON_CLIENT_PREALLOCATE: "false"
+    command: ["python", "-m", "pytest", "-q", "tests"]
+
+  # Dual-scale real Hetionet benchmark (10k and 100k) with automatic source
+  # resolution: cached raw TSV/SIF -> data/archives/*.zip -> official HTTPS.
+  # No API, Ollama, or model-pull containers needed for this job.
+  # docker compose --profile study run --build --rm study
+  study:
+    profiles: ["study"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    restart: "no"
+    environment:
+      JAX_PLATFORMS: cpu
+      XLA_PYTHON_CLIENT_PREALLOCATE: "false"
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      # study only writes the finished PDF into the host project root.
+      - ./:/app/project_root
+    command:
+      - python
+      - -m
+      - gnn_rag.dual_scale_benchmark
+      - --pdf-output
+      - /app/project_root/Hetionet_10k_100k_comparison.pdf
+      - --sizes
+      - "10000"
+      - "100000"
+      - --seeds
+      - "42"
+      - "43"
+      - "44"
+      - "45"
+      - "46"
+      - --epochs
+      - "25"
+      - --train-max-positives
+      - "4096"
+      - --eval-max-queries
+      - "128"
+
+
+

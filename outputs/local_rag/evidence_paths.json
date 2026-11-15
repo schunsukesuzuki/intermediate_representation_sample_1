@@ -1,0 +1,162 @@
+[
+  {
+    "nodes": [
+      "Disease::DOID:10652",
+      "Anatomy::UBERON:0000955",
+      "Gene::6184"
+    ],
+    "distance": 0.2778623700141907,
+    "edges": [
+      {
+        "source": "Disease::DOID:10652",
+        "target": "Anatomy::UBERON:0000955",
+        "relation": "DlA"
+      },
+      {
+        "source": "Anatomy::UBERON:0000955",
+        "target": "Gene::6184",
+        "relation": "AeG"
+      }
+    ]
+  },
+  {
+    "nodes": [
+      "Disease::DOID:10652",
+      "Anatomy::UBERON:0000955",
+      "Gene::10007"
+    ],
+    "distance": 0.293875515460968,
+    "edges": [
+      {
+        "source": "Disease::DOID:10652",
+        "target": "Anatomy::UBERON:0000955",
+        "relation": "DlA"
+      },
+      {
+        "source": "Anatomy::UBERON:0000955",
+        "target": "Gene::10007",
+        "relation": "AeG"
+      }
+    ]
+  },
+  {
+    "nodes": [
+      "Disease::DOID:10652",
+      "Anatomy::UBERON:0000955",
+      "Gene::823"
+    ],
+    "distance": 0.30371296405792236,
+    "edges": [
+      {
+        "source": "Disease::DOID:10652",
+        "target": "Anatomy::UBERON:0000955",
+        "relation": "DlA"
+      },
+      {
+        "source": "Anatomy::UBERON:0000955",
+        "target": "Gene::823",
+        "relation": "AeG"
+      }
+    ]
+  },
+  {
+    "nodes": [
+      "Disease::DOID:10652",
+      "Anatomy::UBERON:0001016",
+      "Gene::4616"
+    ],
+    "distance": 0.30737853050231934,
+    "edges": [
+      {
+        "source": "Disease::DOID:10652",
+        "target": "Anatomy::UBERON:0001016",
+        "relation": "DlA"
+      },
+      {
+        "source": "Anatomy::UBERON:0001016",
+        "target": "Gene::4616",
+        "relation": "AeG"
+      }
+    ]
+  },
+  {
+    "nodes": [
+      "Disease::DOID:10652",
+      "Anatomy::UBERON:0001016",
+      "Gene::10007"
+    ],
+    "distance": 0.31075769662857056,
+    "edges": [
+      {
+        "source": "Disease::DOID:10652",
+        "target": "Anatomy::UBERON:0001016",
+        "relation": "DlA"
+      },
+      {
+        "source": "Anatomy::UBERON:0001016",
+        "target": "Gene::10007",
+        "relation": "AeG"
+      }
+    ]
+  },
+  {
+    "nodes": [
+      "Disease::DOID:10652",
+      "Anatomy::UBERON:0001893",
+      "Gene::5300"
+    ],
+    "distance": 0.3133170008659363,
+    "edges": [
+      {
+        "source": "Disease::DOID:10652",
+        "target": "Anatomy::UBERON:0001893",
+        "relation": "DlA"
+      },
+      {
+        "source": "Anatomy::UBERON:0001893",
+        "target": "Gene::5300",
+        "relation": "AeG"
+      }
+    ]
+  },
+  {
+    "nodes": [
+      "Disease::DOID:10652",
+      "Anatomy::UBERON:0001016",
+      "Gene::57192"
+    ],
+    "distance": 0.3138619065284729,
+    "edges": [
+      {
+        "source": "Disease::DOID:10652",
+        "target": "Anatomy::UBERON:0001016",
+        "relation": "DlA"
+      },
+      {
+        "source": "Anatomy::UBERON:0001016",
+        "target": "Gene::57192",
+        "relation": "AeG"
+      }
+    ]
+  },
+  {
+    "nodes": [
+      "Disease::DOID:10652",
+      "Anatomy::UBERON:0001893",
+      "Gene::10180"
+    ],
+    "distance": 0.36686640977859497,
+    "edges": [
+      {
+        "source": "Disease::DOID:10652",
+        "target": "Anatomy::UBERON:0001893",
+        "relation": "DlA"
+      },
+      {
+        "source": "Anatomy::UBERON:0001893",
+        "target": "Gene::10180",
+        "relation": "AeG"
+      }
+    ]
+  }
+]

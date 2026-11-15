@@ -1,0 +1,93 @@
+[
+  {
+    "evidence_id": "E1",
+    "source": "Disease::DOID:10652",
+    "target": "Anatomy::UBERON:0000955",
+    "source_name": "Alzheimer's disease",
+    "target_name": "brain",
+    "source_kind": "Disease",
+    "target_kind": "Anatomy",
+    "relation": "DlA",
+    "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+    "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+    "statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。"
+  },
+  {
+    "evidence_id": "E2",
+    "source": "Anatomy::UBERON:0000955",
+    "target": "Gene::6184",
+    "source_name": "brain",
+    "target_name": "RPN1",
+    "source_kind": "Anatomy",
+    "target_kind": "Gene",
+    "relation": "AeG",
+    "label": "解剖学的部位での遺伝子発現",
+    "provenance": "Hetionet v1.0に収録された関係",
+    "statement": "brain（Anatomy）とRPN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+  },
+  {
+    "evidence_id": "E3",
+    "source": "Anatomy::UBERON:0000955",
+    "target": "Gene::10007",
+    "source_name": "brain",
+    "target_name": "GNPDA1",
+    "source_kind": "Anatomy",
+    "target_kind": "Gene",
+    "relation": "AeG",
+    "label": "解剖学的部位での遺伝子発現",
+    "provenance": "Hetionet v1.0に収録された関係",
+    "statement": "brain（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+  },
+  {
+    "evidence_id": "E4",
+    "source": "Anatomy::UBERON:0000955",
+    "target": "Gene::823",
+    "source_name": "brain",
+    "target_name": "CAPN1",
+    "source_kind": "Anatomy",
+    "target_kind": "Gene",
+    "relation": "AeG",
+    "label": "解剖学的部位での遺伝子発現",
+    "provenance": "Hetionet v1.0に収録された関係",
+    "statement": "brain（Anatomy）とCAPN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+  },
+  {
+    "evidence_id": "E5",
+    "source": "Disease::DOID:10652",
+    "target": "Anatomy::UBERON:0001016",
+    "source_name": "Alzheimer's disease",
+    "target_name": "nervous system",
+    "source_kind": "Disease",
+    "target_kind": "Anatomy",
+    "relation": "DlA",
+    "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+    "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+    "statement": "Alzheimer's disease（Disease）とnervous system（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。"
+  },
+  {
+    "evidence_id": "E6",
+    "source": "Anatomy::UBERON:0001016",
+    "target": "Gene::4616",
+    "source_name": "nervous system",
+    "target_name": "GADD45B",
+    "source_kind": "Anatomy",
+    "target_kind": "Gene",
+    "relation": "AeG",
+    "label": "解剖学的部位での遺伝子発現",
+    "provenance": "Hetionet v1.0に収録された関係",
+    "statement": "nervous system（Anatomy）とGADD45B（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+  },
+  {
+    "evidence_id": "E7",
+    "source": "Anatomy::UBERON:0001016",
+    "target": "Gene::10007",
+    "source_name": "nervous system",
+    "target_name": "GNPDA1",
+    "source_kind": "Anatomy",
+    "target_kind": "Gene",
+    "relation": "AeG",
+    "label": "解剖学的部位での遺伝子発現",
+    "provenance": "Hetionet v1.0に収録された関係",
+    "statement": "nervous system（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+  }
+]

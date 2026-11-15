@@ -1,0 +1,20 @@
+{
+  "data_type": "synthetic functionality only — NOT Hetionet",
+  "n_nodes": 1000,
+  "triples": 10000,
+  "train_triples": 7016,
+  "validation_triples": 1492,
+  "test_triples": 1492,
+  "feature_mode": "kind_only",
+  "epochs": 2,
+  "seed": 42,
+  "evaluated_test_queries": 8,
+  "alpha": 0.5,
+  "test_mrr10": {
+    "gnn_only": 0.0,
+    "bfs_only": 0.0,
+    "bfs_gnn": 0.0
+  },
+  "elapsed_seconds_this_machine": 8.11,
+  "purpose": "Verify one 10k-triple JAX+ranking execution; scores are not a biomedical result"
+}

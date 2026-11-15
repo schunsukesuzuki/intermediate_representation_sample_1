@@ -1,0 +1,42 @@
+# Optional legacy CPU-only Ollama for offline/Linux use.
+# Run: docker compose -f compose.yaml -f compose.cpu.yaml up --build -d
+# On macOS this does NOT use Metal; use the default compose.yaml instead.
+services:
+  ollama:
+    image: ollama/ollama:latest
+    init: true
+    restart: unless-stopped
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_CONTEXT_LENGTH: ${GNN_RAG_OLLAMA_NUM_CTX:-8192}
+    expose: ["11434"]
+    volumes:
+      - ollama_models:/root/.ollama
+    healthcheck:
+      test: ["CMD-SHELL", "OLLAMA_HOST=http://127.0.0.1:11434 ollama list >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+      start_period: 15s
+
+  model-pull:
+    image: ollama/ollama:latest
+    init: true
+    restart: "no"
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    command: ["pull", "${GNN_RAG_MODEL:-qwen3:1.7b}"]
+
+  api:
+    depends_on:
+      model-pull:
+        condition: service_completed_successfully
+    environment:
+      GNN_RAG_OLLAMA_URL: http://ollama:11434
+
+volumes:
+  ollama_models:

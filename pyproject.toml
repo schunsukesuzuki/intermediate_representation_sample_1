@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gnn-rag-interview"
+version = "0.14.0"
+description = "Hetionet v11: four-way KG sequence reasoning, Qwen cross comparison, React and PDF reports"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Proprietary demo / see LICENSE-NOTE.md"}
+dependencies = [
+  "jax>=0.4.30",
+  "numpy>=1.26",
+  "polars>=1.0",
+  "voyager>=2.0",
+  "reportlab>=4.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+api = ["fastapi>=0.110", "uvicorn>=0.29"]
+
+[project.scripts]
+gnn-rag-demo = "gnn_rag.demo:main"
+gnn-rag-local = "gnn_rag.rag:main"
+hetionet-sample = "gnn_rag.public_data:main"
+hetionet-compare = "gnn_rag.dual_scale_benchmark:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

@@ -1,0 +1,496 @@
+node_id,name,kind,topic,description
+Anatomy::UBERON:0000006,islet of Langerhans,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000007,pituitary gland,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000029,lymph node,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000033,head,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000043,tendon,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000057,urethra,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000178,blood,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000473,testis,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000474,female reproductive system,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000948,heart,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000955,brain,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000966,retina,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000970,eye,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000988,pons,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000991,gonad,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000995,uterus,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000996,vagina,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0000998,seminal vesicle,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001007,digestive system,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001008,renal system,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001013,adipose tissue,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001016,nervous system,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001225,cortex of kidney,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001235,adrenal cortex,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001295,endometrium,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001296,myometrium,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001620,central retinal artery,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001891,midbrain,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001893,telencephalon,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001896,medulla oblongata,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0001911,mammary gland,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002030,nipple,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002037,cerebellum,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002046,thyroid gland,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002048,lung,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002073,hair follicle,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002082,cardiac ventricle,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002097,skin of body,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002107,liver,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002113,kidney,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002240,spinal cord,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002349,myocardium,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002367,prostate gland,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002371,bone marrow,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002390,hematopoietic system,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0002450,decidua,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Anatomy::UBERON:0003126,trachea,Anatomy,Anatomy,Hetionet node category: Anatomy; no narrative provided by TSV.
+Biological Process::GO:0001510,RNA methylation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0001550,ovarian cumulus expansion,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0001775,cell activation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0001895,retina homeostasis,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0001934,positive regulation of protein phosphorylation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0006140,regulation of nucleotide metabolic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0006367,transcription initiation from RNA polymerase II promoter,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0006468,protein phosphorylation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0006482,protein demethylation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0006511,ubiquitin-dependent protein catabolic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0006812,cation transport,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0006875,cellular metal ion homeostasis,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0006978,"DNA damage response, signal transduction by p53 class mediator resulting in transcription of p21 class mediator",Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0007606,sensory perception of chemical stimulus,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0009141,nucleoside triphosphate metabolic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0009165,nucleotide biosynthetic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0009612,response to mechanical stimulus,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0009790,embryo development,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0010035,response to inorganic substance,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0010171,body morphogenesis,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0010639,negative regulation of organelle organization,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0010769,regulation of cell morphogenesis involved in differentiation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0015677,copper ion import,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0015867,ATP transport,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0016050,vesicle organization,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0016055,Wnt signaling pathway,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0016485,protein processing,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0022411,cellular component disassembly,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0022412,cellular process involved in reproduction in multicellular organism,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0030258,lipid modification,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0030488,tRNA methylation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0030817,regulation of cAMP biosynthetic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0030818,negative regulation of cAMP biosynthetic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0030855,epithelial cell differentiation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0032388,positive regulation of intracellular transport,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0034660,ncRNA metabolic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0042472,inner ear morphogenesis,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0043124,negative regulation of I-kappaB kinase/NF-kappaB signaling,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0043304,regulation of mast cell degranulation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0043903,"regulation of symbiosis, encompassing mutualism through parasitism",Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0044829,positive regulation by host of viral genome replication,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0045597,positive regulation of cell differentiation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0045766,positive regulation of angiogenesis,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0045833,negative regulation of lipid metabolic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0046128,purine ribonucleoside metabolic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0046488,phosphatidylinositol metabolic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0046545,development of primary female sexual characteristics,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0046883,regulation of hormone secretion,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0048207,"vesicle targeting, rough ER to cis-Golgi",Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0048511,rhythmic process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0048565,digestive tract development,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0048771,tissue remodeling,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0050708,regulation of protein secretion,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0050890,cognition,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0050918,positive chemotaxis,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0052696,flavonoid glucuronidation,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0055010,ventricular cardiac muscle tissue morphogenesis,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0055114,oxidation-reduction process,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0060159,regulation of dopamine receptor signaling pathway,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0060675,ureteric bud morphogenesis,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0060759,regulation of response to cytokine stimulus,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0071363,cellular response to growth factor stimulus,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:0071634,regulation of transforming growth factor beta production,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:1903034,regulation of response to wounding,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:1903649,regulation of cytoplasmic transport,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Biological Process::GO:1904894,positive regulation of STAT cascade,Biological Process,Biological Process,Hetionet node category: Biological Process; no narrative provided by TSV.
+Cellular Component::GO:0000323,lytic vacuole,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:0005769,early endosome,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:0005773,vacuole,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:0005789,endoplasmic reticulum membrane,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:0030136,clathrin-coated vesicle,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:0031300,intrinsic component of organelle membrane,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:0031984,organelle subcompartment,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:0031985,Golgi cisterna,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:0042611,MHC protein complex,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:0045177,apical part of cell,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Cellular Component::GO:1990904,ribonucleoprotein complex,Cellular Component,Cellular Component,Hetionet node category: Cellular Component; no narrative provided by TSV.
+Compound::DB00191,Phentermine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00200,Hydroxocobalamin,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00230,Pregabalin,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00242,Cladribine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00297,Bupivacaine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00333,Methadone,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00374,Treprostinil,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00397,Phenylpropanolamine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00404,Alprazolam,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00441,Gemcitabine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00465,Ketorolac,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00475,Chlordiazepoxide,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00546,Adinazolam,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00556,Perflutren,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00627,Niacin,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00628,Clorazepate,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00647,Dextropropoxyphene,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00653,Magnesium Sulfate,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00683,Midazolam,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00690,Flurazepam,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00783,Estradiol,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00812,Phenylbutazone,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00842,Oxazepam,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00865,Benzphetamine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00897,Triazolam,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00937,Diethylpropion,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00960,Pindolol,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00982,Isotretinoin,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB00991,Oxaprozin,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01050,Ibuprofen,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01075,Diphenhydramine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01080,Vigabatrin,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01105,Sibutramine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01112,Cefuroxime,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01182,Propafenone,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01201,Rifapentine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01234,Dexamethasone,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01247,Isocarboxazid,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01263,Posaconazole,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01577,Methamphetamine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01579,Phendimetrazine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01588,Prazepam,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01589,Quazepam,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB01616,Alverine,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB08826,Deferiprone,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Compound::DB08912,Dabrafenib,Compound,Compound,Hetionet node category: Compound; no narrative provided by TSV.
+Disease::DOID:0050741,alcohol dependence,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:0050742,nicotine dependence,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:10652,Alzheimer's disease,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:10871,age related macular degeneration,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:12849,autistic disorder,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:12995,conduct disorder,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:1686,glaucoma,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:263,kidney cancer,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:3121,gallbladder cancer,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:3312,bipolar disorder,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:332,amyotrophic lateral sclerosis,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:5419,schizophrenia,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:8893,psoriasis,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Disease::DOID:9835,refractive error,Disease,Disease,Hetionet node category: Disease; no narrative provided by TSV.
+Gene::10007,GNPDA1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10014,HDAC5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10025,MED16,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10097,ACTR2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10147,SUGP2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1018,CDK3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10180,RBM6,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1026,CDKN1A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10318,TNIP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10362,HMG20B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10399,GNB2L1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10464,PIBF1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10489,LRRC41,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10549,PRDX4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10592,SMC2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10690,FUT9,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10857,PGRMC1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10878,CFHR3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10913,EDAR,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::10961,ERP29,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::11010,GLIPR1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::11021,RAB35,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1111,CHEK1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::11127,KIF3A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::11151,CORO1A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::11167,FSTL1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::11197,WIF1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::11237,RNF24,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::112399,EGLN3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::114026,ZIM3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::114790,STK11IP,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::118424,UBE2J2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1201,CLN3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::120775,OR2D3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::120892,LRRK2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::121130,OR10P1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::122769,LRR1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::124590,USH1G,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::128,ADH5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::128637,TBC1D20,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1317,SLC31A1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::132671,SPATA18,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1346,COX7A1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1374,CPT1A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::138804,OR13C4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1409,CRYAA,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::152138,PYDC2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1551,CYP3A7,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::160287,LDHAL6A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::160728,SLC5A8,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1628,DBP,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1643,DDB2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::164633,CABP7,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1649,DDIT3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1656,DDX6,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::168667,BMPER,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1738,DLD,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1742,DLG4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1814,DRD3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::183,AGT,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1891,ECH1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1968,EIF2S3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::1974,EIF4A2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::203197,C9orf91,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2040,STOM,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2043,EPHA4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::207,AKT1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2188,FANCF,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2196,FAT2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2263,FGFR2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2299,FOXI1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::23054,NCOA6,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::23338,JADE2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::23354,HAUS5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::23360,FNBP4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::23405,DICER1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::23683,PRKD3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::23710,GABARAPL1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::24140,FTSJ1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::24149,ZNF318,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2492,FSHR,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2534,FYN,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2555,GABRA2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::25921,ZDHHC5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::25962,KIAA1429,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::26036,ZNF451,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2624,GATA2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2683,B4GALT1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::26873,OPLAH,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::26994,RNF11,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::27143,PALD1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::27339,PRPF19,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2735,GLI1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::285636,C5orf51,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::2931,GSK3A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::29957,SLC25A24,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::29969,MDFIC,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3082,HGF,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::30849,PIK3R4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3106,HLA-B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3228,HOXC12,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3242,HPD,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3304,HSPA1B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3364,HUS1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3383,ICAM1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::339287,MSL1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3398,ID2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3459,IFNGR1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3479,IGF1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::348,APOE,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3614,IMPDH1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3615,IMPDH2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3628,INPP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3669,ISG20,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3688,ITGB1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3689,ITGB2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3716,JAK1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::378708,APITD1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3832,KIF11,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::387338,NSUN4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::390162,OR5M9,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::3988,LIPA,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::399512,SLC25A35,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4016,LOXL1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::408,ARRB1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4088,SMAD3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4089,SMAD4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4090,SMAD5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::414919,C8orf82,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4154,MBNL1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4189,DNAJB9,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::438,ASMT,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::444,ASPH,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4496,MT1H,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4595,MUTYH,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4616,GADD45B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4800,NFYA,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4830,NME1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4887,NPY2R,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4891,SLC11A2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4909,NTF4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::4947,OAZ2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5018,OXA1L,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5034,P4HB,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5045,FURIN,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5081,PAX7,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::50863,NTM,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::51093,RRNAD1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::51094,ADIPOR1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::51188,SS18L2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::51271,UBAP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::51318,MRPL35,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5140,PDE3B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::51411,BIN2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5145,PDE6A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::51491,NOP16,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::51561,IL23A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::51719,CAB39,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::527,ATP6V0C,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5300,PIN1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::53354,PANK1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5339,PLEC,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::53405,CLIC5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5371,PML,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::54442,KCTD5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::54575,UGT1A10,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::54621,VSIG10,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5468,PPARG,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::55140,ELP3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5525,PPP2R5A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::55323,LARP6,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::55515,ASIC4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5562,PRKAA1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5566,PRKACA,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::55748,CNDP2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::55798,METTL2B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::55818,KDM3A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::55867,SLC22A11,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::55929,DMAP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5608,MAP2K6,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::563,AZGP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5663,PSEN1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::57154,SMURF1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::57192,MCOLN1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5743,PTGS2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5869,RAB5B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5887,RAD23B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5927,KDM5A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5929,RBBP5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5936,RBM4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5978,REST,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::5997,RGS2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::60509,AGBL5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6137,RPL13,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6184,RPN1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6256,RXRA,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6356,CCL11,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::63899,NSUN3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::64210,MMS19,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6450,SH3BGR,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6464,SHC1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::64651,CSRNP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::64786,TBC1D15,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::658,BMPR1B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6590,SLPI,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::65982,ZSCAN18,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6794,STK11,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::685,BTC,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6894,TARBP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6910,TBX5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::6988,TCTA,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::7046,TGFBR1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::7103,TSPAN8,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::726,CAPN5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::7306,TYRP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::7316,UBC,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::7341,SUMO1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::7466,WFS1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::7545,ZIC1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::7905,REEP5,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::79050,NOC4L,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::79188,TMEM43,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::79618,HMBOX1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::79633,FAT4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::797,CALCB,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::80007,C10orf88,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::80223,RAB11FIP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::80256,FAM214B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8030,CCDC6,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8034,SLC25A16,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::81551,STMN4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::81631,MAP1LC3B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::81839,VANGL1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::81876,RAB1B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8216,LZTR1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::823,CAPN1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::83550,GPR101,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::83552,MFRP,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8360,HIST1H4D,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::83723,FAM57B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::84197,POMK,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::84230,LRRC8C,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::84335,AKT1S1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::84527,ZNF559,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::84648,LCE3D,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::84720,PIGO,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8477,GPR65,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8626,TP63,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8673,VAMP8,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8682,PEA15,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8703,B4GALT3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8710,SERPINB7,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8803,SUCLA2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8815,BANF1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8841,HDAC3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8870,IER3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::8928,FOXH1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::90196,SYS1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::926,CD8B,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9320,TRIP12,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9349,RPL23,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::947,CD34,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9531,BAG3,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9580,SOX13,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9601,PDIA4,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9705,ST18,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9817,KEAP1,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9823,ARMCX2,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9883,POM121,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Gene::9919,SEC16A,Gene,Gene,Hetionet node category: Gene; no narrative provided by TSV.
+Molecular Function::GO:0000982,"transcription factor activity, RNA polymerase II core promoter proximal region sequence-specific binding",Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0003938,IMP dehydrogenase activity,Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0005057,receptor signaling protein activity,Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0005184,neuropeptide hormone activity,Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0016773,"phosphotransferase activity, alcohol group as acceptor",Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0030234,enzyme regulator activity,Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0032041,NAD-dependent histone deacetylase activity (H3-K14 specific),Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0032182,ubiquitin-like protein binding,Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0035257,nuclear hormone receptor binding,Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0046873,metal ion transmembrane transporter activity,Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Molecular Function::GO:0050291,sphingosine N-acyltransferase activity,Molecular Function,Molecular Function,Hetionet node category: Molecular Function; no narrative provided by TSV.
+Pathway::PC7_1563,Adaptive Immune System,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pathway::PC7_3017,Defective AMN causes hereditary megaloblastic anemia 1,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pathway::PC7_4366,HIV Life Cycle,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pathway::PC7_4938,LKB1 signaling events,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pathway::PC7_6044,Olfactory Signaling Pathway,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pathway::PC7_6540,Post-translational protein modification,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pathway::PC7_7457,Signaling by GPCR,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pathway::PC7_7478,Signaling by SCF-KIT,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pathway::WP183_r81161,Proteasome Degradation,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pathway::WP2884_r83041,NRF2 pathway,Pathway,Pathway,Hetionet node category: Pathway; no narrative provided by TSV.
+Pharmacologic Class::N0000007542,Benzodiazepines,Pharmacologic Class,Pharmacologic Class,Hetionet node category: Pharmacologic Class; no narrative provided by TSV.
+Pharmacologic Class::N0000175372,Appetite Suppression,Pharmacologic Class,Pharmacologic Class,Hetionet node category: Pharmacologic Class; no narrative provided by TSV.
+Pharmacologic Class::N0000175729,Central Nervous System Stimulation,Pharmacologic Class,Pharmacologic Class,Hetionet node category: Pharmacologic Class; no narrative provided by TSV.
+Side Effect::C0014038,Encephalitis,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0016204,Flatulence,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0020458,Hyperhidrosis,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0032285,Pneumonia,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0037763,Muscle spasms,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0085649,Oedema peripheral,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0151740,Intracranial pressure increased,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0152171,Primary pulmonary hypertension,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0235710,Chest discomfort,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0332575,Redness,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0855775,Pulmonary function test decreased,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0856095,Vomiting aggravated,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0917801,Insomnia,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Side Effect::C0948594,Musculoskeletal discomfort,Side Effect,Side Effect,Hetionet node category: Side Effect; no narrative provided by TSV.
+Symptom::D005311,Fetal Hypoxia,Symptom,Symptom,Hetionet node category: Symptom; no narrative provided by TSV.
+Symptom::D011595,Psychomotor Agitation,Symptom,Symptom,Hetionet node category: Symptom; no narrative provided by TSV.
+Symptom::D013064,Speech Disorders,Symptom,Symptom,Hetionet node category: Symptom; no narrative provided by TSV.

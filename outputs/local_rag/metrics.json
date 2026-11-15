@@ -1,0 +1,20 @@
+{
+  "train_loss": 1.3653247356414795,
+  "epochs": 25,
+  "seed": 42,
+  "train_triples": 7414,
+  "train_positives_after_symmetric_augmentation": 7723,
+  "validation_triples": 1293,
+  "test_triples": 1293,
+  "embedding_dim": 16,
+  "n_relations": 24,
+  "train_adjacency_pairs": 6391,
+  "max_ranking_positives_per_epoch": 4096,
+  "ranking_eligible_training_positives": 7720,
+  "feature_dim": 75,
+  "feature_mode": "kind_name",
+  "negative_sampling": "same target node type; exclude training positive triples",
+  "negative_samples_per_positive": 4,
+  "training_objective": "sampled softmax ranking (one positive, N typed negatives)",
+  "model": "GraphSAGE encoder + relation-translated cosine query"
+}

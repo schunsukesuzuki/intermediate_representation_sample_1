@@ -1,0 +1,1796 @@
+{
+  "created_utc": "2026-11-15T06:29:23.009591+00:00",
+  "node_id": "Disease::DOID:10652",
+  "node_name": "Alzheimer's disease",
+  "question": "このノードに登録された関係を、根拠だけで説明してください。",
+  "hops": 2,
+  "dataset": "hetionet_subset",
+  "top_k": 3,
+  "model": "qwen3:1.7b",
+  "fusion_alpha": 0.5,
+  "fusion_calibrated": true,
+  "results": {
+    "plain_qwen": {
+      "answer": "このノードに登録された関係は、以下の通り根拠に基づいて説明できます：\n\n- **「Alzheimer's disease」は「脳の退化」に関連する疾患**  \n  これは、脳の神経細胞が減少し、認知機能が低下する病態を指します。\n\n- **「Alzheimer's disease」は「認知機能の低下」に関連する疾患**  \n  これは、記憶や判断、言語能力などの認知機能が低下する病態を指します。\n\n- **「Alzheimer's disease」は「神経変性疾患」に属する**  \n  これは、神経細胞の変性や損傷が原因で認知機能が低下する病態を指します。\n\n- **「Alzheimer's disease」は「遺伝的要因」に関連する疾患**  \n  これは、遺伝的要因が発症に影響を与える可能性がある病態を指します。\n\nこれらの関係は、Alzheimer's diseaseの特徴や病理学的背景に基づいています。",
+      "status": "unverified_generation",
+      "catalog": [],
+      "evidence": [],
+      "selected_evidence_ids": [],
+      "structured_paths": [],
+      "structured_path_text": "Plain Qwen: KG検索なし（ノード・エッジ未提供）。",
+      "sequence_interpretation": "このノードに登録された関係は、Alzheimer's diseaseの特徴や病理学的背景に基づいています。具体的には、脳の退化、認知機能の低下、神経変性疾患、遺伝的要因に関連しています。",
+      "explanation": "原回答の主張は、Alzheimer's diseaseの関係を、脳の退化、認知機能の低下、神経変性疾患、遺伝的要因として整理しています。ただし、これらの関係は、KGシーケンスが未提供であるため、根拠の明確性や実証性は確認されていません。また、原回答の主張は未検証の仮説として扱われ、医学的因果や治療効果の優劣の断定はできません。",
+      "explanation_status": "generated_unverified"
+    },
+    "bfs_only": {
+      "answer": "知識グラフに登録されたリンク（研究用データ、臨床的な因果関係の証明ではありません）:\n[E1] Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。\n[E5] Alzheimer's disease（Disease）とtelencephalon（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。\n[E6] telencephalon（Anatomy）とUBC（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。\n[E7] telencephalon（Anatomy）とAKT1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。\n以上は知識グラフ上の登録情報であり、診断・治療の推奨ではありません。",
+      "status": "selected",
+      "selected_evidence_ids": [
+        "E1",
+        "E5",
+        "E6",
+        "E7"
+      ],
+      "catalog": [
+        {
+          "evidence_id": "E1",
+          "source": "Disease::DOID:10652",
+          "target": "Anatomy::UBERON:0000955",
+          "source_name": "Alzheimer's disease",
+          "target_name": "brain",
+          "source_kind": "Disease",
+          "target_kind": "Anatomy",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。"
+        },
+        {
+          "evidence_id": "E2",
+          "source": "Anatomy::UBERON:0000955",
+          "target": "Gene::10007",
+          "source_name": "brain",
+          "target_name": "GNPDA1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "brain（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E3",
+          "source": "Anatomy::UBERON:0000955",
+          "target": "Gene::348",
+          "source_name": "brain",
+          "target_name": "APOE",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "brain（Anatomy）とAPOE（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E4",
+          "source": "Anatomy::UBERON:0000955",
+          "target": "Gene::348",
+          "source_name": "brain",
+          "target_name": "APOE",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AuG",
+          "label": "解剖学的部位での遺伝子発現上昇",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "brain（Anatomy）とAPOE（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現上昇」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E5",
+          "source": "Disease::DOID:10652",
+          "target": "Anatomy::UBERON:0001893",
+          "source_name": "Alzheimer's disease",
+          "target_name": "telencephalon",
+          "source_kind": "Disease",
+          "target_kind": "Anatomy",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "statement": "Alzheimer's disease（Disease）とtelencephalon（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。"
+        },
+        {
+          "evidence_id": "E6",
+          "source": "Anatomy::UBERON:0001893",
+          "target": "Gene::7316",
+          "source_name": "telencephalon",
+          "target_name": "UBC",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "telencephalon（Anatomy）とUBC（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E7",
+          "source": "Anatomy::UBERON:0001893",
+          "target": "Gene::207",
+          "source_name": "telencephalon",
+          "target_name": "AKT1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "telencephalon（Anatomy）とAKT1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        }
+      ],
+      "evidence": [
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::10007"
+          ],
+          "distance": 2.0,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0000955",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0000955",
+              "target": "Gene::10007",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::348"
+          ],
+          "distance": 2.0045045045045047,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0000955",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0000955",
+              "target": "Gene::348",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::348"
+          ],
+          "distance": 2.009009009009009,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0000955",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0000955",
+              "target": "Gene::348",
+              "relation": "AuG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::7316"
+          ],
+          "distance": 2.083333333333333,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001893",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001893",
+              "target": "Gene::7316",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::207"
+          ],
+          "distance": 2.0910256410256407,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001893",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001893",
+              "target": "Gene::207",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::5300"
+          ],
+          "distance": 2.0987179487179484,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001893",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001893",
+              "target": "Gene::5300",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::10007"
+          ],
+          "distance": 2.166666666666667,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001016",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001016",
+              "target": "Gene::10007",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::348"
+          ],
+          "distance": 2.1755162241887906,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001016",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001016",
+              "target": "Gene::348",
+              "relation": "AeG"
+            }
+          ]
+        }
+      ],
+      "structured_paths": [
+        {
+          "path_id": "P1",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::10007"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E1",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0000955",
+              "target_name": "brain",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0000955",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E2",
+              "source_id": "Anatomy::UBERON:0000955",
+              "source_name": "brain",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "brain（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::10007",
+              "target_name": "GNPDA1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0000955",
+              "traversal_to": "Gene::10007",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P2",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::348"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E1",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0000955",
+              "target_name": "brain",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0000955",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E3",
+              "source_id": "Anatomy::UBERON:0000955",
+              "source_name": "brain",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "brain（Anatomy）とAPOE（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::348",
+              "target_name": "APOE",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0000955",
+              "traversal_to": "Gene::348",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P3",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::348"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E1",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0000955",
+              "target_name": "brain",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0000955",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E4",
+              "source_id": "Anatomy::UBERON:0000955",
+              "source_name": "brain",
+              "source_kind": "Anatomy",
+              "relation_code": "AuG",
+              "relation_label": "解剖学的部位での遺伝子発現上昇",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "brain（Anatomy）とAPOE（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現上昇」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::348",
+              "target_name": "APOE",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0000955",
+              "traversal_to": "Gene::348",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P4",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::7316"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E5",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とtelencephalon（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0001893",
+              "target_name": "telencephalon",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0001893",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E6",
+              "source_id": "Anatomy::UBERON:0001893",
+              "source_name": "telencephalon",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "telencephalon（Anatomy）とUBC（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::7316",
+              "target_name": "UBC",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0001893",
+              "traversal_to": "Gene::7316",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P5",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::207"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E5",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とtelencephalon（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0001893",
+              "target_name": "telencephalon",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0001893",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E7",
+              "source_id": "Anatomy::UBERON:0001893",
+              "source_name": "telencephalon",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "telencephalon（Anatomy）とAKT1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::207",
+              "target_name": "AKT1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0001893",
+              "traversal_to": "Gene::207",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        }
+      ],
+      "structured_path_text": "P1（観測済みTrainエッジ）\n  hop 1 [E1; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain（Anatomy） [探索順: Alzheimer's disease→brain（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E2; 未採用（エッジは存在）] brain（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> GNPDA1（Gene） [探索順: brain→GNPDA1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP2（観測済みTrainエッジ）\n  hop 1 [E1; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain（Anatomy） [探索順: Alzheimer's disease→brain（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E3; 未採用（エッジは存在）] brain（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> APOE（Gene） [探索順: brain→APOE（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP3（観測済みTrainエッジ）\n  hop 1 [E1; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain（Anatomy） [探索順: Alzheimer's disease→brain（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E4; 未採用（エッジは存在）] brain（Anatomy） --[AuG: 解剖学的部位での遺伝子発現上昇]--> APOE（Gene） [探索順: brain→APOE（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP4（観測済みTrainエッジ）\n  hop 1 [E5; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> telencephalon（Anatomy） [探索順: Alzheimer's disease→telencephalon（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E6; 採用] telencephalon（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> UBC（Gene） [探索順: telencephalon→UBC（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP5（観測済みTrainエッジ）\n  hop 1 [E5; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> telencephalon（Anatomy） [探索順: Alzheimer's disease→telencephalon（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E7; 採用] telencephalon（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> AKT1（Gene） [探索順: telencephalon→AKT1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係",
+      "sequence_interpretation": "得られたシーケンスでは、Alzheimer's disease（疾患）とbrain（解剖学的部位）の関係が推定され、さらにbrainとGNPDA1、APOEなどの遺伝子との関係が観測されています。これらの関係は文献抄録の共起に基づいて推定され、解剖学的病変の確定ではないと明記されています。",
+      "explanation": "この回答では、HetionetによるBFS検索結果を基に、Alzheimer's diseaseとbrainの関係が文献共起から推定され、解剖学的病変の確定ではないと述べています。また、brainとGNPDA1、APOEの関係は解剖学的部位での遺伝子発現として登録され、文献に基づいて推定されています。ただし、これらの関係は医学的因果や治療効果の証明ではなく、統計的関連の推定であり、特定の病理変化や治療効果の評価には適用不能であることを注意する必要があります。",
+      "explanation_status": "generated_unverified"
+    },
+    "gnn_only": {
+      "answer": "知識グラフに登録されたリンク（研究用データ、臨床的な因果関係の証明ではありません）:\n[E1] Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。\n[E5] Alzheimer's disease（Disease）とnervous system（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。\n[E6] nervous system（Anatomy）とGADD45B（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。\n[E7] nervous system（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。\n以上は知識グラフ上の登録情報であり、診断・治療の推奨ではありません。",
+      "status": "selected",
+      "selected_evidence_ids": [
+        "E1",
+        "E5",
+        "E6",
+        "E7"
+      ],
+      "catalog": [
+        {
+          "evidence_id": "E1",
+          "source": "Disease::DOID:10652",
+          "target": "Anatomy::UBERON:0000955",
+          "source_name": "Alzheimer's disease",
+          "target_name": "brain",
+          "source_kind": "Disease",
+          "target_kind": "Anatomy",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。"
+        },
+        {
+          "evidence_id": "E2",
+          "source": "Anatomy::UBERON:0000955",
+          "target": "Gene::6184",
+          "source_name": "brain",
+          "target_name": "RPN1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "brain（Anatomy）とRPN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E3",
+          "source": "Anatomy::UBERON:0000955",
+          "target": "Gene::10007",
+          "source_name": "brain",
+          "target_name": "GNPDA1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "brain（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E4",
+          "source": "Anatomy::UBERON:0000955",
+          "target": "Gene::823",
+          "source_name": "brain",
+          "target_name": "CAPN1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "brain（Anatomy）とCAPN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E5",
+          "source": "Disease::DOID:10652",
+          "target": "Anatomy::UBERON:0001016",
+          "source_name": "Alzheimer's disease",
+          "target_name": "nervous system",
+          "source_kind": "Disease",
+          "target_kind": "Anatomy",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "statement": "Alzheimer's disease（Disease）とnervous system（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。"
+        },
+        {
+          "evidence_id": "E6",
+          "source": "Anatomy::UBERON:0001016",
+          "target": "Gene::4616",
+          "source_name": "nervous system",
+          "target_name": "GADD45B",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "nervous system（Anatomy）とGADD45B（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E7",
+          "source": "Anatomy::UBERON:0001016",
+          "target": "Gene::10007",
+          "source_name": "nervous system",
+          "target_name": "GNPDA1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "nervous system（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        }
+      ],
+      "evidence": [
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::6184"
+          ],
+          "distance": 0.2778623700141907,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0000955",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0000955",
+              "target": "Gene::6184",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::10007"
+          ],
+          "distance": 0.293875515460968,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0000955",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0000955",
+              "target": "Gene::10007",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::823"
+          ],
+          "distance": 0.30371296405792236,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0000955",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0000955",
+              "target": "Gene::823",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::4616"
+          ],
+          "distance": 0.30737853050231934,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001016",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001016",
+              "target": "Gene::4616",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::10007"
+          ],
+          "distance": 0.31075769662857056,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001016",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001016",
+              "target": "Gene::10007",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::5300"
+          ],
+          "distance": 0.3133170008659363,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001893",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001893",
+              "target": "Gene::5300",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::57192"
+          ],
+          "distance": 0.3138619065284729,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001016",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001016",
+              "target": "Gene::57192",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::10180"
+          ],
+          "distance": 0.36686640977859497,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001893",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001893",
+              "target": "Gene::10180",
+              "relation": "AeG"
+            }
+          ]
+        }
+      ],
+      "structured_paths": [
+        {
+          "path_id": "P1",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::6184"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E1",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0000955",
+              "target_name": "brain",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0000955",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E2",
+              "source_id": "Anatomy::UBERON:0000955",
+              "source_name": "brain",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "brain（Anatomy）とRPN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::6184",
+              "target_name": "RPN1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0000955",
+              "traversal_to": "Gene::6184",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P2",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::10007"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E1",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0000955",
+              "target_name": "brain",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0000955",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E3",
+              "source_id": "Anatomy::UBERON:0000955",
+              "source_name": "brain",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "brain（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::10007",
+              "target_name": "GNPDA1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0000955",
+              "traversal_to": "Gene::10007",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P3",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::823"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E1",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0000955",
+              "target_name": "brain",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0000955",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E4",
+              "source_id": "Anatomy::UBERON:0000955",
+              "source_name": "brain",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "brain（Anatomy）とCAPN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::823",
+              "target_name": "CAPN1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0000955",
+              "traversal_to": "Gene::823",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P4",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::4616"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E5",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とnervous system（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0001016",
+              "target_name": "nervous system",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0001016",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E6",
+              "source_id": "Anatomy::UBERON:0001016",
+              "source_name": "nervous system",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "nervous system（Anatomy）とGADD45B（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::4616",
+              "target_name": "GADD45B",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0001016",
+              "traversal_to": "Gene::4616",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P5",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::10007"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E5",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とnervous system（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0001016",
+              "target_name": "nervous system",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0001016",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E7",
+              "source_id": "Anatomy::UBERON:0001016",
+              "source_name": "nervous system",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "nervous system（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::10007",
+              "target_name": "GNPDA1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0001016",
+              "traversal_to": "Gene::10007",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        }
+      ],
+      "structured_path_text": "P1（観測済みTrainエッジ）\n  hop 1 [E1; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain（Anatomy） [探索順: Alzheimer's disease→brain（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E2; 未採用（エッジは存在）] brain（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> RPN1（Gene） [探索順: brain→RPN1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP2（観測済みTrainエッジ）\n  hop 1 [E1; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain（Anatomy） [探索順: Alzheimer's disease→brain（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E3; 未採用（エッジは存在）] brain（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> GNPDA1（Gene） [探索順: brain→GNPDA1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP3（観測済みTrainエッジ）\n  hop 1 [E1; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain（Anatomy） [探索順: Alzheimer's disease→brain（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E4; 未採用（エッジは存在）] brain（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> CAPN1（Gene） [探索順: brain→CAPN1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP4（観測済みTrainエッジ）\n  hop 1 [E5; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> nervous system（Anatomy） [探索順: Alzheimer's disease→nervous system（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E6; 採用] nervous system（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> GADD45B（Gene） [探索順: nervous system→GADD45B（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP5（観測済みTrainエッジ）\n  hop 1 [E5; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> nervous system（Anatomy） [探索順: Alzheimer's disease→nervous system（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E7; 採用] nervous system（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> GNPDA1（Gene） [探索順: nervous system→GNPDA1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係",
+      "sequence_interpretation": "得られたシーケンスは、Alzheimer's disease（疾患）とbrain（解剖学的部位）の関連、およびnervous system（解剖学的部位）とGADD45B、GNPDA1（遺伝子）の関連を示しています。これらの関係は、文献抄録の共起に基づいて推定された統計的関連であり、解剖学的病変の確定ではないため、医学的因果や治療効果の断定はできません。",
+      "explanation": "この回答は、Hetionetによる文献抄録の共起に基づく関係型の登録情報を使用し、Alzheimer's diseaseとbrain、nervous systemとGADD45B、GNPDA1との関連を推測しています。ただし、これらの関係は統計的共起に基づく推定であり、医学的因果や治療効果の証明にはなりません。また、解剖学的病変の確定が保証されていないため、診断や性能の優劣の断定もできません。",
+      "explanation_status": "generated_unverified"
+    },
+    "bfs_gnn": {
+      "answer": "知識グラフに登録されたリンク（研究用データ、臨床的な因果関係の証明ではありません）:\n[E1] Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。\n[E5] Alzheimer's disease（Disease）とnervous system（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。\n[E7] Alzheimer's disease（Disease）とtelencephalon（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。\n以上は知識グラフ上の登録情報であり、診断・治療の推奨ではありません。",
+      "status": "selected",
+      "selected_evidence_ids": [
+        "E1",
+        "E5",
+        "E7"
+      ],
+      "catalog": [
+        {
+          "evidence_id": "E1",
+          "source": "Disease::DOID:10652",
+          "target": "Anatomy::UBERON:0000955",
+          "source_name": "Alzheimer's disease",
+          "target_name": "brain",
+          "source_kind": "Disease",
+          "target_kind": "Anatomy",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。"
+        },
+        {
+          "evidence_id": "E2",
+          "source": "Anatomy::UBERON:0000955",
+          "target": "Gene::10007",
+          "source_name": "brain",
+          "target_name": "GNPDA1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "brain（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E3",
+          "source": "Anatomy::UBERON:0000955",
+          "target": "Gene::6184",
+          "source_name": "brain",
+          "target_name": "RPN1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "brain（Anatomy）とRPN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E4",
+          "source": "Anatomy::UBERON:0000955",
+          "target": "Gene::5300",
+          "source_name": "brain",
+          "target_name": "PIN1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "brain（Anatomy）とPIN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E5",
+          "source": "Disease::DOID:10652",
+          "target": "Anatomy::UBERON:0001016",
+          "source_name": "Alzheimer's disease",
+          "target_name": "nervous system",
+          "source_kind": "Disease",
+          "target_kind": "Anatomy",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "statement": "Alzheimer's disease（Disease）とnervous system（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。"
+        },
+        {
+          "evidence_id": "E6",
+          "source": "Anatomy::UBERON:0001016",
+          "target": "Gene::10007",
+          "source_name": "nervous system",
+          "target_name": "GNPDA1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "nervous system（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        },
+        {
+          "evidence_id": "E7",
+          "source": "Disease::DOID:10652",
+          "target": "Anatomy::UBERON:0001893",
+          "source_name": "Alzheimer's disease",
+          "target_name": "telencephalon",
+          "source_kind": "Disease",
+          "target_kind": "Anatomy",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "statement": "Alzheimer's disease（Disease）とtelencephalon（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。"
+        },
+        {
+          "evidence_id": "E8",
+          "source": "Anatomy::UBERON:0001893",
+          "target": "Gene::5300",
+          "source_name": "telencephalon",
+          "target_name": "PIN1",
+          "source_kind": "Anatomy",
+          "target_kind": "Gene",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "statement": "telencephalon（Anatomy）とPIN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。"
+        }
+      ],
+      "evidence": [
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::10007"
+          ],
+          "distance": 2.0022522522522523,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0000955",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0000955",
+              "target": "Gene::10007",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::6184"
+          ],
+          "distance": 2.009009009009009,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0000955",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0000955",
+              "target": "Gene::6184",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::5300"
+          ],
+          "distance": 2.036036036036036,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0000955",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0000955",
+              "target": "Gene::5300",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::10007"
+          ],
+          "distance": 2.129424778761062,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001016",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001016",
+              "target": "Gene::10007",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::5300"
+          ],
+          "distance": 2.1326923076923077,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001893",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001893",
+              "target": "Gene::5300",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::4616"
+          ],
+          "distance": 2.142699115044248,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001016",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001016",
+              "target": "Gene::4616",
+              "relation": "AeG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::5300"
+          ],
+          "distance": 2.1557692307692307,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001893",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001893",
+              "target": "Gene::5300",
+              "relation": "AuG"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::4016"
+          ],
+          "distance": 2.1559734513274336,
+          "edges": [
+            {
+              "source": "Disease::DOID:10652",
+              "target": "Anatomy::UBERON:0001016",
+              "relation": "DlA"
+            },
+            {
+              "source": "Anatomy::UBERON:0001016",
+              "target": "Gene::4016",
+              "relation": "AeG"
+            }
+          ]
+        }
+      ],
+      "structured_paths": [
+        {
+          "path_id": "P1",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::10007"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E1",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0000955",
+              "target_name": "brain",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0000955",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E2",
+              "source_id": "Anatomy::UBERON:0000955",
+              "source_name": "brain",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "brain（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::10007",
+              "target_name": "GNPDA1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0000955",
+              "traversal_to": "Gene::10007",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P2",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::6184"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E1",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0000955",
+              "target_name": "brain",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0000955",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E3",
+              "source_id": "Anatomy::UBERON:0000955",
+              "source_name": "brain",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "brain（Anatomy）とRPN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::6184",
+              "target_name": "RPN1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0000955",
+              "traversal_to": "Gene::6184",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P3",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0000955",
+            "Gene::5300"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E1",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とbrain（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0000955",
+              "target_name": "brain",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0000955",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E4",
+              "source_id": "Anatomy::UBERON:0000955",
+              "source_name": "brain",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "brain（Anatomy）とPIN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::5300",
+              "target_name": "PIN1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0000955",
+              "traversal_to": "Gene::5300",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P4",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001016",
+            "Gene::10007"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E5",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とnervous system（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0001016",
+              "target_name": "nervous system",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0001016",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E6",
+              "source_id": "Anatomy::UBERON:0001016",
+              "source_name": "nervous system",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "nervous system（Anatomy）とGNPDA1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::10007",
+              "target_name": "GNPDA1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0001016",
+              "traversal_to": "Gene::10007",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        },
+        {
+          "path_id": "P5",
+          "traversal_node_ids": [
+            "Disease::DOID:10652",
+            "Anatomy::UBERON:0001893",
+            "Gene::5300"
+          ],
+          "steps": [
+            {
+              "hop": 1,
+              "evidence_id": "E7",
+              "source_id": "Disease::DOID:10652",
+              "source_name": "Alzheimer's disease",
+              "source_kind": "Disease",
+              "relation_code": "DlA",
+              "relation_label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+              "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+              "registered_statement": "Alzheimer's disease（Disease）とtelencephalon（Anatomy）の間には、Hetionet上で「疾患と解剖学的部位の関連（文献抄録の共起から推定）」という登録リンクがあります。文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない。",
+              "target_id": "Anatomy::UBERON:0001893",
+              "target_name": "telencephalon",
+              "target_kind": "Anatomy",
+              "traversal_from": "Disease::DOID:10652",
+              "traversal_to": "Anatomy::UBERON:0001893",
+              "traversal_direction": "forward",
+              "selected_for_answer": true,
+              "observed_train_edge": true
+            },
+            {
+              "hop": 2,
+              "evidence_id": "E8",
+              "source_id": "Anatomy::UBERON:0001893",
+              "source_name": "telencephalon",
+              "source_kind": "Anatomy",
+              "relation_code": "AeG",
+              "relation_label": "解剖学的部位での遺伝子発現",
+              "provenance": "Hetionet v1.0に収録された関係",
+              "registered_statement": "telencephalon（Anatomy）とPIN1（Gene）の間には、Hetionet上で「解剖学的部位での遺伝子発現」という登録リンクがあります。Hetionet v1.0に収録された関係。",
+              "target_id": "Gene::5300",
+              "target_name": "PIN1",
+              "target_kind": "Gene",
+              "traversal_from": "Anatomy::UBERON:0001893",
+              "traversal_to": "Gene::5300",
+              "traversal_direction": "forward",
+              "selected_for_answer": false,
+              "observed_train_edge": true
+            }
+          ],
+          "status": "verified_observed_train_path"
+        }
+      ],
+      "structured_path_text": "P1（観測済みTrainエッジ）\n  hop 1 [E1; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain（Anatomy） [探索順: Alzheimer's disease→brain（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E2; 未採用（エッジは存在）] brain（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> GNPDA1（Gene） [探索順: brain→GNPDA1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP2（観測済みTrainエッジ）\n  hop 1 [E1; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain（Anatomy） [探索順: Alzheimer's disease→brain（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E3; 未採用（エッジは存在）] brain（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> RPN1（Gene） [探索順: brain→RPN1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP3（観測済みTrainエッジ）\n  hop 1 [E1; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain（Anatomy） [探索順: Alzheimer's disease→brain（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E4; 未採用（エッジは存在）] brain（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> PIN1（Gene） [探索順: brain→PIN1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP4（観測済みTrainエッジ）\n  hop 1 [E5; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> nervous system（Anatomy） [探索順: Alzheimer's disease→nervous system（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E6; 未採用（エッジは存在）] nervous system（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> GNPDA1（Gene） [探索順: nervous system→GNPDA1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係\nP5（観測済みTrainエッジ）\n  hop 1 [E7; 採用] Alzheimer's disease（Disease） --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> telencephalon（Anatomy） [探索順: Alzheimer's disease→telencephalon（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: 文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない\n  hop 2 [E8; 未採用（エッジは存在）] telencephalon（Anatomy） --[AeG: 解剖学的部位での遺伝子発現]--> PIN1（Gene） [探索順: telencephalon→PIN1（順方向）; 原登録の向きはsource→target]\n    関係定義・出典: Hetionet v1.0に収録された関係",
+      "sequence_interpretation": "得られたシーケンスは、Alzheimer's disease（疾患）とbrain（解剖学的部位）、nervous system（解剖学的部位）、telencephalon（解剖学的部位）との関係を推測しています。これらの関係は、文献抄録での共起に基づいて推定され、解剖学的病変の確定ではないと明記されています。",
+      "explanation": "この回答は、Hetionet上で文献抄録の共起に基づいて推定された関係を示しています。ただし、これらの関係は医学的因果や診断・治療の推奨ではありません。また、文献抄録の共起に基づく統計的関連を示すため、具体的な病理学的根拠や臨床的証明は含まれていません。推測は「仮説」と明記され、医学的因果や直接リンクを断定するものではありません。",
+      "explanation_status": "generated_unverified"
+    }
+  },
+  "intermediate_representation_version": "v14-typed-paths-structured-llm",
+  "disclaimer": "Plain Qwen does not receive KG context. The other three methods only use observed train edges. This is qualitative QA comparison, not a four-way MRR/medical correctness benchmark.",
+  "explanation_note": "Each method first receives a sequence-based Qwen interpretation, including explicitly unverified hypotheses, followed by a 3-6 sentence explanation. Plain Qwen has no KG; graph methods receive retrieved observed TRAIN paths and separately marked selected facts. Neither interpretation is validated KG evidence.",
+  "method_audit": {
+    "plain_qwen": {
+      "source": "no_kg_retrieval",
+      "selected_train_edges": [],
+      "path_count": 0,
+      "note": "Plain Qwen has no supplied KG evidence."
+    },
+    "bfs_only": {
+      "source": "observed_train_kg",
+      "selected_train_edges": [
+        {
+          "evidence_id": "E1",
+          "source": "Disease::DOID:10652",
+          "source_name": "Alzheimer's disease",
+          "source_kind": "Disease",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "target": "Anatomy::UBERON:0000955",
+          "target_name": "brain",
+          "target_kind": "Anatomy"
+        },
+        {
+          "evidence_id": "E5",
+          "source": "Disease::DOID:10652",
+          "source_name": "Alzheimer's disease",
+          "source_kind": "Disease",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "target": "Anatomy::UBERON:0001893",
+          "target_name": "telencephalon",
+          "target_kind": "Anatomy"
+        },
+        {
+          "evidence_id": "E6",
+          "source": "Anatomy::UBERON:0001893",
+          "source_name": "telencephalon",
+          "source_kind": "Anatomy",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "target": "Gene::7316",
+          "target_name": "UBC",
+          "target_kind": "Gene"
+        },
+        {
+          "evidence_id": "E7",
+          "source": "Anatomy::UBERON:0001893",
+          "source_name": "telencephalon",
+          "source_kind": "Anatomy",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "target": "Gene::207",
+          "target_name": "AKT1",
+          "target_kind": "Gene"
+        }
+      ],
+      "path_count": 5,
+      "note": "Relations are independently typed; selected edges are not all identical."
+    },
+    "gnn_only": {
+      "source": "observed_train_kg",
+      "selected_train_edges": [
+        {
+          "evidence_id": "E1",
+          "source": "Disease::DOID:10652",
+          "source_name": "Alzheimer's disease",
+          "source_kind": "Disease",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "target": "Anatomy::UBERON:0000955",
+          "target_name": "brain",
+          "target_kind": "Anatomy"
+        },
+        {
+          "evidence_id": "E5",
+          "source": "Disease::DOID:10652",
+          "source_name": "Alzheimer's disease",
+          "source_kind": "Disease",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "target": "Anatomy::UBERON:0001016",
+          "target_name": "nervous system",
+          "target_kind": "Anatomy"
+        },
+        {
+          "evidence_id": "E6",
+          "source": "Anatomy::UBERON:0001016",
+          "source_name": "nervous system",
+          "source_kind": "Anatomy",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "target": "Gene::4616",
+          "target_name": "GADD45B",
+          "target_kind": "Gene"
+        },
+        {
+          "evidence_id": "E7",
+          "source": "Anatomy::UBERON:0001016",
+          "source_name": "nervous system",
+          "source_kind": "Anatomy",
+          "relation": "AeG",
+          "label": "解剖学的部位での遺伝子発現",
+          "provenance": "Hetionet v1.0に収録された関係",
+          "target": "Gene::10007",
+          "target_name": "GNPDA1",
+          "target_kind": "Gene"
+        }
+      ],
+      "path_count": 5,
+      "note": "Relations are independently typed; selected edges are not all identical."
+    },
+    "bfs_gnn": {
+      "source": "observed_train_kg",
+      "selected_train_edges": [
+        {
+          "evidence_id": "E1",
+          "source": "Disease::DOID:10652",
+          "source_name": "Alzheimer's disease",
+          "source_kind": "Disease",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "target": "Anatomy::UBERON:0000955",
+          "target_name": "brain",
+          "target_kind": "Anatomy"
+        },
+        {
+          "evidence_id": "E5",
+          "source": "Disease::DOID:10652",
+          "source_name": "Alzheimer's disease",
+          "source_kind": "Disease",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "target": "Anatomy::UBERON:0001016",
+          "target_name": "nervous system",
+          "target_kind": "Anatomy"
+        },
+        {
+          "evidence_id": "E7",
+          "source": "Disease::DOID:10652",
+          "source_name": "Alzheimer's disease",
+          "source_kind": "Disease",
+          "relation": "DlA",
+          "label": "疾患と解剖学的部位の関連（文献抄録の共起から推定）",
+          "provenance": "文献抄録での共起に基づく統計的関連。解剖学的病変の確定ではない",
+          "target": "Anatomy::UBERON:0001893",
+          "target_name": "telencephalon",
+          "target_kind": "Anatomy"
+        }
+      ],
+      "path_count": 5,
+      "note": "Relations are independently typed; selected edges are not all identical."
+    }
+  },
+  "cross_factual_comparison": {
+    "plain_qwen_kg_edges": 0,
+    "selected_counts": {
+      "bfs_only": 4,
+      "gnn_only": 4,
+      "bfs_gnn": 3
+    },
+    "common_triples": [
+      [
+        "Disease::DOID:10652",
+        "DlA",
+        "Anatomy::UBERON:0000955"
+      ]
+    ],
+    "unique_triples": {
+      "bfs_only": [
+        [
+          "Anatomy::UBERON:0001893",
+          "AeG",
+          "Gene::207"
+        ],
+        [
+          "Anatomy::UBERON:0001893",
+          "AeG",
+          "Gene::7316"
+        ]
+      ],
+      "gnn_only": [
+        [
+          "Anatomy::UBERON:0001016",
+          "AeG",
+          "Gene::10007"
+        ],
+        [
+          "Anatomy::UBERON:0001016",
+          "AeG",
+          "Gene::4616"
+        ]
+      ],
+      "bfs_gnn": []
+    },
+    "summary_text": "Plain Qwen：KG検索なし。登録Trainエッジ数は0（自由生成）。\nBFS only：採用済み観測Trainトリプル 4 件。\n  - telencephalon --[AeG: 解剖学的部位での遺伝子発現]--> AKT1\n  - telencephalon --[AeG: 解剖学的部位での遺伝子発現]--> UBC\n  - Alzheimer's disease --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain\n  - Alzheimer's disease --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> telencephalon\nGNN only：採用済み観測Trainトリプル 4 件。\n  - nervous system --[AeG: 解剖学的部位での遺伝子発現]--> GNPDA1\n  - nervous system --[AeG: 解剖学的部位での遺伝子発現]--> GADD45B\n  - Alzheimer's disease --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain\n  - Alzheimer's disease --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> nervous system\nBFS+GNN：採用済み観測Trainトリプル 3 件。\n  - Alzheimer's disease --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain\n  - Alzheimer's disease --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> nervous system\n  - Alzheimer's disease --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> telencephalon\nKG方式3種すべてに共通する登録Trainトリプル: 1 件。\n  - Alzheimer's disease --[DlA: 疾患と解剖学的部位の関連（文献抄録の共起から推定）]--> brain\nBFS onlyのみに現れる採用トリプル: 2 件。\n  - telencephalon --[AeG: 解剖学的部位での遺伝子発現]--> AKT1\n  - telencephalon --[AeG: 解剖学的部位での遺伝子発現]--> UBC\nGNN onlyのみに現れる採用トリプル: 2 件。\n  - nervous system --[AeG: 解剖学的部位での遺伝子発現]--> GNPDA1\n  - nervous system --[AeG: 解剖学的部位での遺伝子発現]--> GADD45B\nBFS+GNNのみに現れる採用トリプル: 0 件。\n注：比較は(source, relation, target)をキーに行い、方法ごとに付け直されるE1等の局所IDを比較キーに使いません。\nこれらは観測済みTrain上の選択結果であり、未採用=非存在でも、医学的因果・正確性の証明でもありません。"
+  },
+  "cross_comparison": "Qwenによる考察（未検証）: 4方式の原回答では、Alzheimer's diseaseの関係が文献抄録の共起に基づいて推定され、医学的因果や診断・治療の優劣の断定はされない。ただし、BFS、GNN、BFS+GNNの回答では、解剖学的部位と疾患、遺伝子との関係が推定され、統計的共起に基づいています。\n根拠の限界: 4方式の原回答では、医学的因果や診断・治療の優劣の断定がされず、文献抄録の共起に基づく統計的関連が推定されるため、実証的な根拠が保証されていません。また、解剖学的病変の確定が保証されていないため、医学的知見の優劣の断定もできません。",
+  "cross_comparison_status": "generated_unverified",
+  "cross_comparison_note": "The Qwen cross-method comparison receives four original answers and individual interpretations, but only produces unverified hypotheses. All selected triples are audited by Python, not the LLM; no objective QA or clinical validation."
+}

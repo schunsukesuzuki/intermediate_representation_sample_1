@@ -1,0 +1,796 @@
+{
+  "dataset": "SYNTHETIC typed graph with HIDDEN blocks (NOT Hetionet)",
+  "nodes": 108,
+  "triples": 468,
+  "model": "GraphSAGE/relational ranker, same architecture as v5",
+  "feature_mode": "kind_only",
+  "features_do_not_include_latent_cluster": true,
+  "node_name_values": [
+    "Synthetic disease",
+    "Synthetic gene"
+  ],
+  "scramble_indices": true,
+  "permutation_seed": 20261114,
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "epochs": 25,
+  "runs": [
+    {
+      "seed": 41,
+      "split": {
+        "train": 328,
+        "validation": 70,
+        "test": 70
+      },
+      "model_train_loss": 1.3091477155685425,
+      "task": "held_out_relation_typed_triple_retrieval",
+      "dataset": "set by calling pipeline",
+      "model": "GraphSAGE + relation query",
+      "comparison": "GNN only vs BFS only vs validation-tuned BFS+GNN",
+      "methods": {
+        "gnn_only": {
+          "test": {
+            "hits@1": 0.013157894736842105,
+            "recall@1": 0.006578947368421052,
+            "mrr@1": 0.013157894736842105,
+            "hits@3": 0.07894736842105263,
+            "recall@3": 0.06578947368421052,
+            "mrr@3": 0.04166666666666667,
+            "hits@5": 0.07894736842105263,
+            "recall@5": 0.07236842105263158,
+            "mrr@5": 0.04166666666666667,
+            "hits@10": 0.18421052631578946,
+            "recall@10": 0.16885964912280702,
+            "mrr@10": 0.054751461988304086
+          },
+          "validation": {
+            "hits@1": 0.05405405405405406,
+            "recall@1": 0.04054054054054054,
+            "mrr@1": 0.05405405405405406,
+            "hits@3": 0.16216216216216217,
+            "recall@3": 0.12612612612612611,
+            "mrr@3": 0.09684684684684684,
+            "hits@5": 0.24324324324324326,
+            "recall@5": 0.20270270270270271,
+            "mrr@5": 0.11711711711711711,
+            "hits@10": 0.33783783783783783,
+            "recall@10": 0.29504504504504503,
+            "mrr@10": 0.12884491634491635
+          }
+        },
+        "bfs_only": {
+          "test": {
+            "hits@1": 0.05263157894736842,
+            "recall@1": 0.046052631578947366,
+            "mrr@1": 0.05263157894736842,
+            "hits@3": 0.19736842105263158,
+            "recall@3": 0.16885964912280702,
+            "mrr@3": 0.1118421052631579,
+            "hits@5": 0.2631578947368421,
+            "recall@5": 0.22587719298245612,
+            "mrr@5": 0.12697368421052632,
+            "hits@10": 0.5789473684210527,
+            "recall@10": 0.5021929824561404,
+            "mrr@10": 0.16829573934837094
+          },
+          "validation": {
+            "hits@1": 0.05405405405405406,
+            "recall@1": 0.024774774774774775,
+            "mrr@1": 0.05405405405405406,
+            "hits@3": 0.14864864864864866,
+            "recall@3": 0.1036036036036036,
+            "mrr@3": 0.0945945945945946,
+            "hits@5": 0.2972972972972973,
+            "recall@5": 0.25225225225225223,
+            "mrr@5": 0.1277027027027027,
+            "hits@10": 0.5,
+            "recall@10": 0.4549549549549549,
+            "mrr@10": 0.1540057915057915
+          }
+        },
+        "bfs_gnn": {
+          "test": {
+            "hits@1": 0.07894736842105263,
+            "recall@1": 0.05921052631578947,
+            "mrr@1": 0.07894736842105263,
+            "hits@3": 0.10526315789473684,
+            "recall@3": 0.09210526315789473,
+            "mrr@3": 0.08991228070175439,
+            "hits@5": 0.2894736842105263,
+            "recall@5": 0.2587719298245614,
+            "mrr@5": 0.13135964912280704,
+            "hits@10": 0.5263157894736842,
+            "recall@10": 0.47368421052631576,
+            "mrr@10": 0.16257309941520467
+          },
+          "validation": {
+            "hits@1": 0.12162162162162163,
+            "recall@1": 0.07882882882882883,
+            "mrr@1": 0.12162162162162163,
+            "hits@3": 0.2702702702702703,
+            "recall@3": 0.2117117117117117,
+            "mrr@3": 0.18243243243243243,
+            "hits@5": 0.36486486486486486,
+            "recall@5": 0.3153153153153153,
+            "mrr@5": 0.20270270270270271,
+            "hits@10": 0.5675675675675675,
+            "recall@10": 0.5225225225225225,
+            "mrr@10": 0.22692513942513942
+          }
+        }
+      },
+      "calibration": {
+        "alpha": 0.3,
+        "objective": "validation_mrr@10",
+        "grid": [
+          {
+            "alpha": 0.0,
+            "validation_mrr": 0.1540057915057915,
+            "validation_hits1": 0.05405405405405406
+          },
+          {
+            "alpha": 0.05,
+            "validation_mrr": 0.15907872157872155,
+            "validation_hits1": 0.05405405405405406
+          },
+          {
+            "alpha": 0.1,
+            "validation_mrr": 0.17356284856284857,
+            "validation_hits1": 0.08108108108108109
+          },
+          {
+            "alpha": 0.15,
+            "validation_mrr": 0.19434255684255686,
+            "validation_hits1": 0.0945945945945946
+          },
+          {
+            "alpha": 0.2,
+            "validation_mrr": 0.19684148434148435,
+            "validation_hits1": 0.08108108108108109
+          },
+          {
+            "alpha": 0.25,
+            "validation_mrr": 0.20863899613899614,
+            "validation_hits1": 0.0945945945945946
+          },
+          {
+            "alpha": 0.3,
+            "validation_mrr": 0.22692513942513942,
+            "validation_hits1": 0.12162162162162163
+          },
+          {
+            "alpha": 0.35,
+            "validation_mrr": 0.21123444873444874,
+            "validation_hits1": 0.08108108108108109
+          },
+          {
+            "alpha": 0.4,
+            "validation_mrr": 0.22095667095667096,
+            "validation_hits1": 0.10810810810810811
+          },
+          {
+            "alpha": 0.45,
+            "validation_mrr": 0.2196964821964822,
+            "validation_hits1": 0.10810810810810811
+          },
+          {
+            "alpha": 0.5,
+            "validation_mrr": 0.21673101673101672,
+            "validation_hits1": 0.10810810810810811
+          },
+          {
+            "alpha": 0.55,
+            "validation_mrr": 0.21628592878592878,
+            "validation_hits1": 0.10810810810810811
+          },
+          {
+            "alpha": 0.6,
+            "validation_mrr": 0.21566387816387816,
+            "validation_hits1": 0.10810810810810811
+          },
+          {
+            "alpha": 0.65,
+            "validation_mrr": 0.20711068211068212,
+            "validation_hits1": 0.0945945945945946
+          },
+          {
+            "alpha": 0.7,
+            "validation_mrr": 0.19104461604461606,
+            "validation_hits1": 0.0945945945945946
+          },
+          {
+            "alpha": 0.75,
+            "validation_mrr": 0.17225439725439726,
+            "validation_hits1": 0.08108108108108109
+          },
+          {
+            "alpha": 0.8,
+            "validation_mrr": 0.15833333333333333,
+            "validation_hits1": 0.06756756756756757
+          },
+          {
+            "alpha": 0.85,
+            "validation_mrr": 0.1527777777777778,
+            "validation_hits1": 0.06756756756756757
+          },
+          {
+            "alpha": 0.9,
+            "validation_mrr": 0.14656263406263406,
+            "validation_hits1": 0.06756756756756757
+          },
+          {
+            "alpha": 0.95,
+            "validation_mrr": 0.14746353496353498,
+            "validation_hits1": 0.08108108108108109
+          },
+          {
+            "alpha": 1.0,
+            "validation_mrr": 0.12884491634491635,
+            "validation_hits1": 0.05405405405405406
+          }
+        ],
+        "validation_queries": 74,
+        "uses_test_labels": false,
+        "fallback_to_bfs": false,
+        "chosen_validation_mrr": 0.22692513942513942
+      },
+      "query_count": 76,
+      "validation_query_count": 74,
+      "candidate_counts_test": {
+        "min": 32,
+        "median": 68.0,
+        "max": 70
+      },
+      "test_triples": 70,
+      "validation_triples": 70,
+      "train_triples": 328,
+      "ks": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "fusion_formula": "alpha*GNN_rank_percentile + (1-alpha)*BFS_rank_percentile",
+      "candidate_rule": "same relation-compatible tails excluding train links; validation positives also filtered on test",
+      "bfs_graph": "train triples only, undirected adjacency; distance then degree then ID",
+      "gnn_retrieval": "exact all-candidate relation-conditioned score (NOT HNSW)",
+      "notes": [
+        "No test labels used to tune alpha; one global weight calibrated on validation MRR.",
+        "If calibrated alpha=0, bfs_gnn is BFS fallback, not evidence of improvement.",
+        "All three methods use exactly the same per-query candidate list and relevant tails.",
+        "Transductive held-out link recovery, not biomedical truth or LLM answer quality.",
+        "Unknown relevant links can be mislabeled as negatives in incomplete KGs.",
+        "One split/seed is descriptive only; replicate across seeds for robust comparison.",
+        "BFS and GNN features see training triples only; node names/kinds are public attributes."
+      ]
+    },
+    {
+      "seed": 42,
+      "split": {
+        "train": 328,
+        "validation": 70,
+        "test": 70
+      },
+      "model_train_loss": 1.4936565160751343,
+      "task": "held_out_relation_typed_triple_retrieval",
+      "dataset": "set by calling pipeline",
+      "model": "GraphSAGE + relation query",
+      "comparison": "GNN only vs BFS only vs validation-tuned BFS+GNN",
+      "methods": {
+        "gnn_only": {
+          "test": {
+            "hits@1": 0.024390243902439025,
+            "recall@1": 0.01016260162601626,
+            "mrr@1": 0.024390243902439025,
+            "hits@3": 0.06097560975609756,
+            "recall@3": 0.0467479674796748,
+            "mrr@3": 0.038617886178861784,
+            "hits@5": 0.08536585365853659,
+            "recall@5": 0.06504065040650406,
+            "mrr@5": 0.04410569105691056,
+            "hits@10": 0.10975609756097561,
+            "recall@10": 0.07723577235772357,
+            "mrr@10": 0.04654471544715447
+          },
+          "validation": {
+            "hits@1": 0.0136986301369863,
+            "recall@1": 0.0136986301369863,
+            "mrr@1": 0.0136986301369863,
+            "hits@3": 0.0547945205479452,
+            "recall@3": 0.030821917808219176,
+            "mrr@3": 0.0319634703196347,
+            "hits@5": 0.1095890410958904,
+            "recall@5": 0.07191780821917808,
+            "mrr@5": 0.04566210045662101,
+            "hits@10": 0.1780821917808219,
+            "recall@10": 0.13356164383561644,
+            "mrr@10": 0.053897586431833004
+          }
+        },
+        "bfs_only": {
+          "test": {
+            "hits@1": 0.012195121951219513,
+            "recall@1": 0.012195121951219513,
+            "mrr@1": 0.012195121951219513,
+            "hits@3": 0.15853658536585366,
+            "recall@3": 0.1402439024390244,
+            "mrr@3": 0.07723577235772357,
+            "hits@5": 0.2804878048780488,
+            "recall@5": 0.23577235772357721,
+            "mrr@5": 0.10284552845528455,
+            "hits@10": 0.5,
+            "recall@10": 0.4573170731707317,
+            "mrr@10": 0.1290118079752226
+          },
+          "validation": {
+            "hits@1": 0.0958904109589041,
+            "recall@1": 0.06164383561643835,
+            "mrr@1": 0.0958904109589041,
+            "hits@3": 0.2328767123287671,
+            "recall@3": 0.182648401826484,
+            "mrr@3": 0.1506849315068493,
+            "hits@5": 0.3150684931506849,
+            "recall@5": 0.2648401826484018,
+            "mrr@5": 0.1698630136986301,
+            "hits@10": 0.4931506849315068,
+            "recall@10": 0.44292237442922366,
+            "mrr@10": 0.1947434224831485
+          }
+        },
+        "bfs_gnn": {
+          "test": {
+            "hits@1": 0.012195121951219513,
+            "recall@1": 0.012195121951219513,
+            "mrr@1": 0.012195121951219513,
+            "hits@3": 0.15853658536585366,
+            "recall@3": 0.1402439024390244,
+            "mrr@3": 0.07723577235772357,
+            "hits@5": 0.2804878048780488,
+            "recall@5": 0.23577235772357721,
+            "mrr@5": 0.10284552845528455,
+            "hits@10": 0.5,
+            "recall@10": 0.4573170731707317,
+            "mrr@10": 0.1290118079752226
+          },
+          "validation": {
+            "hits@1": 0.0958904109589041,
+            "recall@1": 0.06164383561643835,
+            "mrr@1": 0.0958904109589041,
+            "hits@3": 0.2328767123287671,
+            "recall@3": 0.182648401826484,
+            "mrr@3": 0.1506849315068493,
+            "hits@5": 0.3150684931506849,
+            "recall@5": 0.2648401826484018,
+            "mrr@5": 0.1698630136986301,
+            "hits@10": 0.4931506849315068,
+            "recall@10": 0.44292237442922366,
+            "mrr@10": 0.1947434224831485
+          }
+        }
+      },
+      "calibration": {
+        "alpha": 0.0,
+        "objective": "validation_mrr@10",
+        "grid": [
+          {
+            "alpha": 0.0,
+            "validation_mrr": 0.1947434224831485,
+            "validation_hits1": 0.0958904109589041
+          },
+          {
+            "alpha": 0.05,
+            "validation_mrr": 0.18697542944118287,
+            "validation_hits1": 0.0821917808219178
+          },
+          {
+            "alpha": 0.1,
+            "validation_mrr": 0.17992498369210697,
+            "validation_hits1": 0.0684931506849315
+          },
+          {
+            "alpha": 0.15,
+            "validation_mrr": 0.17136333985649055,
+            "validation_hits1": 0.0547945205479452
+          },
+          {
+            "alpha": 0.2,
+            "validation_mrr": 0.16626984126984126,
+            "validation_hits1": 0.0547945205479452
+          },
+          {
+            "alpha": 0.25,
+            "validation_mrr": 0.17158077843009353,
+            "validation_hits1": 0.0547945205479452
+          },
+          {
+            "alpha": 0.3,
+            "validation_mrr": 0.1652804957599478,
+            "validation_hits1": 0.0547945205479452
+          },
+          {
+            "alpha": 0.35,
+            "validation_mrr": 0.16148075668623613,
+            "validation_hits1": 0.0547945205479452
+          },
+          {
+            "alpha": 0.4,
+            "validation_mrr": 0.14964122635355512,
+            "validation_hits1": 0.0410958904109589
+          },
+          {
+            "alpha": 0.45,
+            "validation_mrr": 0.1440584909762992,
+            "validation_hits1": 0.0547945205479452
+          },
+          {
+            "alpha": 0.5,
+            "validation_mrr": 0.13929658621439445,
+            "validation_hits1": 0.0547945205479452
+          },
+          {
+            "alpha": 0.55,
+            "validation_mrr": 0.13201239399869538,
+            "validation_hits1": 0.0547945205479452
+          },
+          {
+            "alpha": 0.6,
+            "validation_mrr": 0.11604696673189824,
+            "validation_hits1": 0.0410958904109589
+          },
+          {
+            "alpha": 0.65,
+            "validation_mrr": 0.11538921504674927,
+            "validation_hits1": 0.0410958904109589
+          },
+          {
+            "alpha": 0.7,
+            "validation_mrr": 0.10597412480974125,
+            "validation_hits1": 0.0410958904109589
+          },
+          {
+            "alpha": 0.75,
+            "validation_mrr": 0.10254946727549466,
+            "validation_hits1": 0.0410958904109589
+          },
+          {
+            "alpha": 0.8,
+            "validation_mrr": 0.08007719069362905,
+            "validation_hits1": 0.0273972602739726
+          },
+          {
+            "alpha": 0.85,
+            "validation_mrr": 0.06474233529028049,
+            "validation_hits1": 0.0136986301369863
+          },
+          {
+            "alpha": 0.9,
+            "validation_mrr": 0.06828114807566862,
+            "validation_hits1": 0.0273972602739726
+          },
+          {
+            "alpha": 0.95,
+            "validation_mrr": 0.06118177864753208,
+            "validation_hits1": 0.0273972602739726
+          },
+          {
+            "alpha": 1.0,
+            "validation_mrr": 0.053897586431833004,
+            "validation_hits1": 0.0136986301369863
+          }
+        ],
+        "validation_queries": 73,
+        "uses_test_labels": false,
+        "fallback_to_bfs": true,
+        "chosen_validation_mrr": 0.1947434224831485
+      },
+      "query_count": 82,
+      "validation_query_count": 73,
+      "candidate_counts_test": {
+        "min": 32,
+        "median": 67.0,
+        "max": 69
+      },
+      "test_triples": 70,
+      "validation_triples": 70,
+      "train_triples": 328,
+      "ks": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "fusion_formula": "alpha*GNN_rank_percentile + (1-alpha)*BFS_rank_percentile",
+      "candidate_rule": "same relation-compatible tails excluding train links; validation positives also filtered on test",
+      "bfs_graph": "train triples only, undirected adjacency; distance then degree then ID",
+      "gnn_retrieval": "exact all-candidate relation-conditioned score (NOT HNSW)",
+      "notes": [
+        "No test labels used to tune alpha; one global weight calibrated on validation MRR.",
+        "If calibrated alpha=0, bfs_gnn is BFS fallback, not evidence of improvement.",
+        "All three methods use exactly the same per-query candidate list and relevant tails.",
+        "Transductive held-out link recovery, not biomedical truth or LLM answer quality.",
+        "Unknown relevant links can be mislabeled as negatives in incomplete KGs.",
+        "One split/seed is descriptive only; replicate across seeds for robust comparison.",
+        "BFS and GNN features see training triples only; node names/kinds are public attributes."
+      ]
+    },
+    {
+      "seed": 43,
+      "split": {
+        "train": 328,
+        "validation": 70,
+        "test": 70
+      },
+      "model_train_loss": 1.5633574724197388,
+      "task": "held_out_relation_typed_triple_retrieval",
+      "dataset": "set by calling pipeline",
+      "model": "GraphSAGE + relation query",
+      "comparison": "GNN only vs BFS only vs validation-tuned BFS+GNN",
+      "methods": {
+        "gnn_only": {
+          "test": {
+            "hits@1": 0.02564102564102564,
+            "recall@1": 0.02564102564102564,
+            "mrr@1": 0.02564102564102564,
+            "hits@3": 0.05128205128205128,
+            "recall@3": 0.04273504273504273,
+            "mrr@3": 0.03632478632478633,
+            "hits@5": 0.10256410256410256,
+            "recall@5": 0.07905982905982906,
+            "mrr@5": 0.049145299145299144,
+            "hits@10": 0.1794871794871795,
+            "recall@10": 0.13675213675213674,
+            "mrr@10": 0.05838420838420837
+          },
+          "validation": {
+            "hits@1": 0.0,
+            "recall@1": 0.0,
+            "mrr@1": 0.0,
+            "hits@3": 0.02564102564102564,
+            "recall@3": 0.02564102564102564,
+            "mrr@3": 0.008547008547008546,
+            "hits@5": 0.038461538461538464,
+            "recall@5": 0.038461538461538464,
+            "mrr@5": 0.01175213675213675,
+            "hits@10": 0.10256410256410256,
+            "recall@10": 0.09615384615384616,
+            "mrr@10": 0.020477207977207975
+          }
+        },
+        "bfs_only": {
+          "test": {
+            "hits@1": 0.01282051282051282,
+            "recall@1": 0.00641025641025641,
+            "mrr@1": 0.01282051282051282,
+            "hits@3": 0.16666666666666666,
+            "recall@3": 0.14102564102564102,
+            "mrr@3": 0.07692307692307693,
+            "hits@5": 0.34615384615384615,
+            "recall@5": 0.30662393162393164,
+            "mrr@5": 0.11923076923076922,
+            "hits@10": 0.5897435897435898,
+            "recall@10": 0.5480769230769231,
+            "mrr@10": 0.14885531135531135
+          },
+          "validation": {
+            "hits@1": 0.01282051282051282,
+            "recall@1": 0.01282051282051282,
+            "mrr@1": 0.01282051282051282,
+            "hits@3": 0.16666666666666666,
+            "recall@3": 0.15064102564102563,
+            "mrr@3": 0.08333333333333333,
+            "hits@5": 0.2948717948717949,
+            "recall@5": 0.2638888888888889,
+            "mrr@5": 0.11217948717948718,
+            "hits@10": 0.5,
+            "recall@10": 0.45299145299145294,
+            "mrr@10": 0.1376933251933252
+          }
+        },
+        "bfs_gnn": {
+          "test": {
+            "hits@1": 0.02564102564102564,
+            "recall@1": 0.02564102564102564,
+            "mrr@1": 0.02564102564102564,
+            "hits@3": 0.1282051282051282,
+            "recall@3": 0.09615384615384616,
+            "mrr@3": 0.07051282051282051,
+            "hits@5": 0.2692307692307692,
+            "recall@5": 0.22329059829059825,
+            "mrr@5": 0.10256410256410256,
+            "hits@10": 0.5384615384615384,
+            "recall@10": 0.4989316239316239,
+            "mrr@10": 0.13897537647537647
+          },
+          "validation": {
+            "hits@1": 0.038461538461538464,
+            "recall@1": 0.03205128205128205,
+            "mrr@1": 0.038461538461538464,
+            "hits@3": 0.16666666666666666,
+            "recall@3": 0.15384615384615385,
+            "mrr@3": 0.09188034188034187,
+            "hits@5": 0.2564102564102564,
+            "recall@5": 0.22542735042735046,
+            "mrr@5": 0.11239316239316238,
+            "hits@10": 0.5128205128205128,
+            "recall@10": 0.4626068376068376,
+            "mrr@10": 0.14484126984126983
+          }
+        }
+      },
+      "calibration": {
+        "alpha": 0.15,
+        "objective": "validation_mrr@10",
+        "grid": [
+          {
+            "alpha": 0.0,
+            "validation_mrr": 0.1376933251933252,
+            "validation_hits1": 0.01282051282051282
+          },
+          {
+            "alpha": 0.05,
+            "validation_mrr": 0.1376017501017501,
+            "validation_hits1": 0.01282051282051282
+          },
+          {
+            "alpha": 0.1,
+            "validation_mrr": 0.12859177859177856,
+            "validation_hits1": 0.01282051282051282
+          },
+          {
+            "alpha": 0.15,
+            "validation_mrr": 0.14484126984126983,
+            "validation_hits1": 0.038461538461538464
+          },
+          {
+            "alpha": 0.2,
+            "validation_mrr": 0.11484025234025233,
+            "validation_hits1": 0.0
+          },
+          {
+            "alpha": 0.25,
+            "validation_mrr": 0.11727207977207975,
+            "validation_hits1": 0.0
+          },
+          {
+            "alpha": 0.3,
+            "validation_mrr": 0.12066544566544565,
+            "validation_hits1": 0.01282051282051282
+          },
+          {
+            "alpha": 0.35,
+            "validation_mrr": 0.111533374033374,
+            "validation_hits1": 0.01282051282051282
+          },
+          {
+            "alpha": 0.4,
+            "validation_mrr": 0.10173992673992673,
+            "validation_hits1": 0.01282051282051282
+          },
+          {
+            "alpha": 0.45,
+            "validation_mrr": 0.10287952787952787,
+            "validation_hits1": 0.02564102564102564
+          },
+          {
+            "alpha": 0.5,
+            "validation_mrr": 0.10069190069190069,
+            "validation_hits1": 0.02564102564102564
+          },
+          {
+            "alpha": 0.55,
+            "validation_mrr": 0.08983007733007733,
+            "validation_hits1": 0.02564102564102564
+          },
+          {
+            "alpha": 0.6,
+            "validation_mrr": 0.0848951973951974,
+            "validation_hits1": 0.02564102564102564
+          },
+          {
+            "alpha": 0.65,
+            "validation_mrr": 0.07687728937728938,
+            "validation_hits1": 0.02564102564102564
+          },
+          {
+            "alpha": 0.7,
+            "validation_mrr": 0.08302808302808304,
+            "validation_hits1": 0.038461538461538464
+          },
+          {
+            "alpha": 0.75,
+            "validation_mrr": 0.06960215710215711,
+            "validation_hits1": 0.02564102564102564
+          },
+          {
+            "alpha": 0.8,
+            "validation_mrr": 0.058012820512820515,
+            "validation_hits1": 0.02564102564102564
+          },
+          {
+            "alpha": 0.85,
+            "validation_mrr": 0.04345746845746845,
+            "validation_hits1": 0.01282051282051282
+          },
+          {
+            "alpha": 0.9,
+            "validation_mrr": 0.04002849002849003,
+            "validation_hits1": 0.01282051282051282
+          },
+          {
+            "alpha": 0.95,
+            "validation_mrr": 0.023270248270248272,
+            "validation_hits1": 0.0
+          },
+          {
+            "alpha": 1.0,
+            "validation_mrr": 0.020477207977207975,
+            "validation_hits1": 0.0
+          }
+        ],
+        "validation_queries": 78,
+        "uses_test_labels": false,
+        "fallback_to_bfs": false,
+        "chosen_validation_mrr": 0.14484126984126983
+      },
+      "query_count": 78,
+      "validation_query_count": 78,
+      "candidate_counts_test": {
+        "min": 32,
+        "median": 67.0,
+        "max": 69
+      },
+      "test_triples": 70,
+      "validation_triples": 70,
+      "train_triples": 328,
+      "ks": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "fusion_formula": "alpha*GNN_rank_percentile + (1-alpha)*BFS_rank_percentile",
+      "candidate_rule": "same relation-compatible tails excluding train links; validation positives also filtered on test",
+      "bfs_graph": "train triples only, undirected adjacency; distance then degree then ID",
+      "gnn_retrieval": "exact all-candidate relation-conditioned score (NOT HNSW)",
+      "notes": [
+        "No test labels used to tune alpha; one global weight calibrated on validation MRR.",
+        "If calibrated alpha=0, bfs_gnn is BFS fallback, not evidence of improvement.",
+        "All three methods use exactly the same per-query candidate list and relevant tails.",
+        "Transductive held-out link recovery, not biomedical truth or LLM answer quality.",
+        "Unknown relevant links can be mislabeled as negatives in incomplete KGs.",
+        "One split/seed is descriptive only; replicate across seeds for robust comparison.",
+        "BFS and GNN features see training triples only; node names/kinds are public attributes."
+      ]
+    }
+  ],
+  "limitation": "Synthetic graph construction still uses hidden blocks; GNN has no cluster tags. No live Voyager, Polars, Hetionet or Docker verification.",
+  "mean_test_metrics": {
+    "gnn_only": {
+      "hits@1": 0.021063054760102257,
+      "hits@3": 0.06373500981973383,
+      "hits@10": 0.1578179344546482,
+      "mrr@3": 0.03886977972343827,
+      "mrr@10": 0.053226795273222306,
+      "recall@10": 0.12761585274422246
+    },
+    "bfs_only": {
+      "hits@1": 0.02588240457303358,
+      "hits@3": 0.17419055769505062,
+      "hits@10": 0.5562303193882142,
+      "mrr@3": 0.08866698484798613,
+      "mrr@10": 0.1487209528929683,
+      "recall@10": 0.5025289929012651
+    },
+    "bfs_gnn": {
+      "hits@1": 0.03892783867109926,
+      "hits@3": 0.1306682904885729,
+      "hits@10": 0.5215924426450741,
+      "mrr@3": 0.07922029119076615,
+      "mrr@10": 0.1435200946219346,
+      "recall@10": 0.4766443025428904
+    }
+  }
+}
