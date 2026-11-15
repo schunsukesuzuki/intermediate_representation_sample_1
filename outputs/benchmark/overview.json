@@ -1,0 +1,664 @@
+{
+  "parameters": {
+    "sizes": [
+      10000,
+      100000
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "sample_seed": 42,
+    "max_nodes": 5000,
+    "epochs": 25,
+    "eval_max_queries": 128,
+    "max_positives_per_epoch": 4096,
+    "feature_mode": "kind_name",
+    "created_utc": "2026-11-15T06:32:12.309503+00:00",
+    "sources": {
+      "source_mode": "verified_cached_raw",
+      "sample_seed": 42,
+      "sizes": {
+        "10000": {
+          "sample_dir": "data/samples/10000",
+          "metadata": {
+            "schema_version": 6,
+            "triple_preserving": true,
+            "sampling_mode": "full_hetionet_structural_sample",
+            "focus_id": "Disease::DOID:10652",
+            "requested_focus": "Alzheimer's disease",
+            "focus_in_sample": true,
+            "nodes": 495,
+            "edges": 10000,
+            "requested_target_triples": 10000,
+            "requested_max_nodes": 5000,
+            "seed": 42,
+            "types": [
+              "Anatomy",
+              "Biological Process",
+              "Cellular Component",
+              "Compound",
+              "Disease",
+              "Gene",
+              "Molecular Function",
+              "Pathway",
+              "Pharmacologic Class",
+              "Side Effect",
+              "Symptom"
+            ],
+            "relation_counts": {
+              "AdG": 1129,
+              "AeG": 5595,
+              "AuG": 1103,
+              "CbG": 24,
+              "CcSE": 152,
+              "CdG": 40,
+              "CpD": 2,
+              "CrC": 57,
+              "CtD": 2,
+              "CuG": 56,
+              "DaG": 51,
+              "DdG": 18,
+              "DlA": 49,
+              "DpS": 11,
+              "DrD": 10,
+              "DuG": 25,
+              "GcG": 63,
+              "GiG": 288,
+              "GpBP": 554,
+              "GpCC": 83,
+              "GpMF": 64,
+              "GpPW": 64,
+              "Gr>G": 547,
+              "PCiC": 13
+            },
+            "source": "hetio/hetionet v1.0 TSV + SIF.gz (full original data)",
+            "caveats": [
+              "Dataset uses an induced, multi-source structural SAMPLE, not an IID draw.",
+              "Sampling precedes holdout split; TRAIN adjacency excludes held-out links.",
+              "Raw SIF lacks per-edge provenance and licensing annotations.",
+              "This dataset is only a held-out link ranking test, not clinical validation."
+            ],
+            "selected_nodes_before_final_edge_sampling": 495,
+            "induced_triples_before_final_edge_sampling": 12500,
+            "spanning_forest_triples": 494,
+            "full_source_triple_count": 2250197,
+            "full_source_node_count": 47031,
+            "sampling": "node-type-stratified multi-seed frontier + induced edges + spanning forest + uniform remainder",
+            "selection_based_on_full_unsplit_graph": true
+          },
+          "nodes_sha256": "a8f9d23919a5a0b583294f5783e6b8c0f9997d1de25b60cdc1ed34bf139979ab",
+          "edges_sha256": "9839f413c0073cfc6d324602ea847d88891c0f36791aaeb6671a27ca25e1b35d",
+          "status": "495 nodes / 10000 typed triples"
+        },
+        "100000": {
+          "sample_dir": "data/samples/100000",
+          "metadata": {
+            "schema_version": 6,
+            "triple_preserving": true,
+            "sampling_mode": "full_hetionet_structural_sample",
+            "focus_id": "Disease::DOID:10652",
+            "requested_focus": "Alzheimer's disease",
+            "focus_in_sample": true,
+            "nodes": 2330,
+            "edges": 100000,
+            "requested_target_triples": 100000,
+            "requested_max_nodes": 5000,
+            "seed": 42,
+            "types": [
+              "Anatomy",
+              "Biological Process",
+              "Cellular Component",
+              "Compound",
+              "Disease",
+              "Gene",
+              "Molecular Function",
+              "Pathway",
+              "Pharmacologic Class",
+              "Side Effect",
+              "Symptom"
+            ],
+            "relation_counts": {
+              "AdG": 7126,
+              "AeG": 39617,
+              "AuG": 7167,
+              "CbG": 323,
+              "CcSE": 3567,
+              "CdG": 1000,
+              "CpD": 40,
+              "CrC": 148,
+              "CtD": 61,
+              "CuG": 903,
+              "DaG": 1028,
+              "DdG": 298,
+              "DlA": 337,
+              "DpS": 52,
+              "DrD": 50,
+              "DuG": 319,
+              "GcG": 805,
+              "GiG": 5091,
+              "GpBP": 13962,
+              "GpCC": 1793,
+              "GpMF": 2347,
+              "GpPW": 1349,
+              "Gr>G": 12601,
+              "PCiC": 16
+            },
+            "source": "hetio/hetionet v1.0 TSV + SIF.gz (full original data)",
+            "caveats": [
+              "Dataset uses an induced, multi-source structural SAMPLE, not an IID draw.",
+              "Sampling precedes holdout split; TRAIN adjacency excludes held-out links.",
+              "Raw SIF lacks per-edge provenance and licensing annotations.",
+              "This dataset is only a held-out link ranking test, not clinical validation."
+            ],
+            "selected_nodes_before_final_edge_sampling": 2330,
+            "induced_triples_before_final_edge_sampling": 125035,
+            "spanning_forest_triples": 2329,
+            "full_source_triple_count": 2250197,
+            "full_source_node_count": 47031,
+            "sampling": "node-type-stratified multi-seed frontier + induced edges + spanning forest + uniform remainder",
+            "selection_based_on_full_unsplit_graph": true
+          },
+          "nodes_sha256": "b2c89aeecd2276653be0fc1c9f051ccf1a73236e006d12fb7d05765d1a5bfe61",
+          "edges_sha256": "0daeaf4a8d7a49c87328a26aadc4247b290854f89fcc811731c66ae6841b9e4f",
+          "status": "2330 nodes / 100000 typed triples"
+        }
+      }
+    }
+  },
+  "sizes": {
+    "10000": {
+      "size": 10000,
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "num_seeds": 5,
+      "mean_candidate_count": 178.6,
+      "mean_node_count": 495.0,
+      "methods": {
+        "gnn_only": {
+          "hits@1": {
+            "mean": 0.1640625,
+            "sd": 0.014615849167085708,
+            "per_seed": [
+              0.1796875,
+              0.1484375,
+              0.15625,
+              0.15625,
+              0.1796875
+            ]
+          },
+          "hits@3": {
+            "mean": 0.334375,
+            "sd": 0.0396055995488643,
+            "per_seed": [
+              0.2890625,
+              0.328125,
+              0.3046875,
+              0.375,
+              0.375
+            ]
+          },
+          "hits@5": {
+            "mean": 0.4203125,
+            "sd": 0.04036878338363692,
+            "per_seed": [
+              0.3828125,
+              0.4140625,
+              0.390625,
+              0.484375,
+              0.4296875
+            ]
+          },
+          "hits@10": {
+            "mean": 0.5671875,
+            "sd": 0.02849153520126636,
+            "per_seed": [
+              0.5546875,
+              0.578125,
+              0.5234375,
+              0.59375,
+              0.5859375
+            ]
+          },
+          "recall@10": {
+            "mean": 0.4659125491152148,
+            "sd": 0.025855304154764912,
+            "per_seed": [
+              0.46073636841100074,
+              0.46848837129342846,
+              0.42682844065656567,
+              0.4978045422714541,
+              0.4757050229436249
+            ]
+          },
+          "mrr@10": {
+            "mean": 0.2749894593253968,
+            "sd": 0.018091887990144266,
+            "per_seed": [
+              0.26795014880952384,
+              0.2682105654761905,
+              0.2520895337301587,
+              0.2905877976190476,
+              0.2961092509920635
+            ]
+          }
+        },
+        "bfs_only": {
+          "hits@1": {
+            "mean": 0.1234375,
+            "sd": 0.018652088103614566,
+            "per_seed": [
+              0.1171875,
+              0.140625,
+              0.09375,
+              0.1328125,
+              0.1328125
+            ]
+          },
+          "hits@3": {
+            "mean": 0.2640625,
+            "sd": 0.037222278904911234,
+            "per_seed": [
+              0.2578125,
+              0.28125,
+              0.2109375,
+              0.3125,
+              0.2578125
+            ]
+          },
+          "hits@5": {
+            "mean": 0.340625,
+            "sd": 0.0377109949567099,
+            "per_seed": [
+              0.3359375,
+              0.359375,
+              0.2890625,
+              0.390625,
+              0.328125
+            ]
+          },
+          "hits@10": {
+            "mean": 0.4375,
+            "sd": 0.037057941330098196,
+            "per_seed": [
+              0.4140625,
+              0.4296875,
+              0.40625,
+              0.5,
+              0.4375
+            ]
+          },
+          "recall@10": {
+            "mean": 0.4058150482075114,
+            "sd": 0.027672292933384884,
+            "per_seed": [
+              0.38821360930735926,
+              0.4070194128787879,
+              0.38495163690476186,
+              0.4529260583166833,
+              0.3959645236299648
+            ]
+          },
+          "mrr@10": {
+            "mean": 0.21478174603174605,
+            "sd": 0.022689644577374737,
+            "per_seed": [
+              0.2094029017857143,
+              0.22639508928571428,
+              0.1805214533730159,
+              0.24162016369047618,
+              0.21596912202380952
+            ]
+          }
+        },
+        "bfs_gnn": {
+          "hits@1": {
+            "mean": 0.1625,
+            "sd": 0.018652088103614566,
+            "per_seed": [
+              0.171875,
+              0.15625,
+              0.171875,
+              0.1796875,
+              0.1328125
+            ]
+          },
+          "hits@3": {
+            "mean": 0.3171875,
+            "sd": 0.044055850562099014,
+            "per_seed": [
+              0.296875,
+              0.3125,
+              0.3125,
+              0.390625,
+              0.2734375
+            ]
+          },
+          "hits@5": {
+            "mean": 0.396875,
+            "sd": 0.04501518840902479,
+            "per_seed": [
+              0.3984375,
+              0.3984375,
+              0.3671875,
+              0.46875,
+              0.3515625
+            ]
+          },
+          "hits@10": {
+            "mean": 0.528125,
+            "sd": 0.0531594557381375,
+            "per_seed": [
+              0.5,
+              0.5625,
+              0.5078125,
+              0.6015625,
+              0.46875
+            ]
+          },
+          "recall@10": {
+            "mean": 0.4547374924667341,
+            "sd": 0.040942913573105005,
+            "per_seed": [
+              0.43349656624013244,
+              0.4574206629600951,
+              0.4450186011904762,
+              0.5225072950946112,
+              0.4152443368483556
+            ]
+          },
+          "mrr@10": {
+            "mean": 0.2653695436507936,
+            "sd": 0.02828300575944123,
+            "per_seed": [
+              0.2636470734126984,
+              0.2670696924603174,
+              0.26256200396825397,
+              0.306671626984127,
+              0.22689732142857144
+            ]
+          }
+        }
+      },
+      "training": {
+        "final_train_loss_mean": 1.3131306886672973,
+        "train_triples_mean": 7413.8,
+        "runtime_seconds_mean": 3.002
+      },
+      "gnn_minus_bfs_mrr10": [
+        0.058547247023809534,
+        0.04181547619047621,
+        0.0715680803571428,
+        0.04896763392857145,
+        0.08014012896825395
+      ],
+      "fusion_minus_bfs_mrr10": [
+        0.05424417162698408,
+        0.04067460317460314,
+        0.08204055059523807,
+        0.0650514632936508,
+        0.010928199404761918
+      ],
+      "alphas": [
+        0.5,
+        0.95,
+        0.7,
+        0.7,
+        0.15
+      ]
+    },
+    "100000": {
+      "size": 100000,
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "num_seeds": 5,
+      "mean_candidate_count": 984.9,
+      "mean_node_count": 2330.0,
+      "methods": {
+        "gnn_only": {
+          "hits@1": {
+            "mean": 0.0625,
+            "sd": 0.011048543456039806,
+            "per_seed": [
+              0.0625,
+              0.078125,
+              0.0625,
+              0.046875,
+              0.0625
+            ]
+          },
+          "hits@3": {
+            "mean": 0.1421875,
+            "sd": 0.031926276158910236,
+            "per_seed": [
+              0.1796875,
+              0.15625,
+              0.1171875,
+              0.1015625,
+              0.15625
+            ]
+          },
+          "hits@5": {
+            "mean": 0.19375,
+            "sd": 0.03378398173506196,
+            "per_seed": [
+              0.2421875,
+              0.203125,
+              0.1484375,
+              0.1875,
+              0.1875
+            ]
+          },
+          "hits@10": {
+            "mean": 0.315625,
+            "sd": 0.04300424670163402,
+            "per_seed": [
+              0.390625,
+              0.296875,
+              0.2890625,
+              0.3125,
+              0.2890625
+            ]
+          },
+          "recall@10": {
+            "mean": 0.21159089953077934,
+            "sd": 0.01877597093598531,
+            "per_seed": [
+              0.24483121221475265,
+              0.19870830155791058,
+              0.20558207560061645,
+              0.20474609193515836,
+              0.2040868163454587
+            ]
+          },
+          "mrr@10": {
+            "mean": 0.12404761904761905,
+            "sd": 0.017221501921105647,
+            "per_seed": [
+              0.14974888392857144,
+              0.1306051587301587,
+              0.11145213293650794,
+              0.10612909226190476,
+              0.12230282738095238
+            ]
+          }
+        },
+        "bfs_only": {
+          "hits@1": {
+            "mean": 0.05,
+            "sd": 0.006987712429686843,
+            "per_seed": [
+              0.046875,
+              0.0546875,
+              0.0546875,
+              0.0546875,
+              0.0390625
+            ]
+          },
+          "hits@3": {
+            "mean": 0.128125,
+            "sd": 0.008907620508587016,
+            "per_seed": [
+              0.1328125,
+              0.125,
+              0.1171875,
+              0.140625,
+              0.125
+            ]
+          },
+          "hits@5": {
+            "mean": 0.1796875,
+            "sd": 0.025315393353155705,
+            "per_seed": [
+              0.2109375,
+              0.15625,
+              0.1640625,
+              0.1640625,
+              0.203125
+            ]
+          },
+          "hits@10": {
+            "mean": 0.28125,
+            "sd": 0.048475287679651785,
+            "per_seed": [
+              0.296875,
+              0.265625,
+              0.2109375,
+              0.2890625,
+              0.34375
+            ]
+          },
+          "recall@10": {
+            "mean": 0.22795648914329478,
+            "sd": 0.03929207574155153,
+            "per_seed": [
+              0.23683064429674097,
+              0.20602058531746031,
+              0.17979098205257837,
+              0.23191275537248712,
+              0.2852274786772071
+            ]
+          },
+          "mrr@10": {
+            "mean": 0.1077139136904762,
+            "sd": 0.0046434320185269025,
+            "per_seed": [
+              0.10946800595238096,
+              0.1054749503968254,
+              0.10066964285714286,
+              0.11178695436507936,
+              0.11117001488095239
+            ]
+          }
+        },
+        "bfs_gnn": {
+          "hits@1": {
+            "mean": 0.071875,
+            "sd": 0.020222154852413726,
+            "per_seed": [
+              0.1015625,
+              0.046875,
+              0.0703125,
+              0.0625,
+              0.078125
+            ]
+          },
+          "hits@3": {
+            "mean": 0.1625,
+            "sd": 0.011587810136086974,
+            "per_seed": [
+              0.1796875,
+              0.1484375,
+              0.15625,
+              0.1640625,
+              0.1640625
+            ]
+          },
+          "hits@5": {
+            "mean": 0.2234375,
+            "sd": 0.01620034480728728,
+            "per_seed": [
+              0.203125,
+              0.234375,
+              0.2109375,
+              0.2421875,
+              0.2265625
+            ]
+          },
+          "hits@10": {
+            "mean": 0.3125,
+            "sd": 0.028168369339562415,
+            "per_seed": [
+              0.3203125,
+              0.28125,
+              0.2890625,
+              0.3203125,
+              0.3515625
+            ]
+          },
+          "recall@10": {
+            "mean": 0.23148067961098115,
+            "sd": 0.027779626759250803,
+            "per_seed": [
+              0.23466602709926784,
+              0.18936362457850392,
+              0.23209635416666669,
+              0.23378046901641045,
+              0.2674969231940568
+            ]
+          },
+          "mrr@10": {
+            "mean": 0.13519655257936508,
+            "sd": 0.01584049754021645,
+            "per_seed": [
+              0.15545944940476192,
+              0.1138764880952381,
+              0.12865513392857142,
+              0.1332124255952381,
+              0.14477926587301587
+            ]
+          }
+        }
+      },
+      "training": {
+        "final_train_loss_mean": 1.4034270524978638,
+        "train_triples_mean": 72637.8,
+        "runtime_seconds_mean": 7.554
+      },
+      "gnn_minus_bfs_mrr10": [
+        0.04028087797619048,
+        0.025130208333333307,
+        0.010782490079365076,
+        -0.005657862103174607,
+        0.011132812499999992
+      ],
+      "fusion_minus_bfs_mrr10": [
+        0.04599144345238096,
+        0.00840153769841269,
+        0.02798549107142856,
+        0.02142547123015874,
+        0.03360925099206348
+      ],
+      "alphas": [
+        0.85,
+        0.8,
+        0.55,
+        0.9,
+        0.2
+      ]
+    }
+  }
+}
