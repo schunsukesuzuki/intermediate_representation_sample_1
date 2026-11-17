@@ -1,55 +1,56 @@
 # GNN-RAG v14 — Mac Metal / React / Four-way Qwen / PDF
 
-**Apple Silicon の Mac Studio 用ハイブリッド構成**：React、FastAPI、JAX/GraphSAGE は Docker に置き、**Ollama/Qwen3 のみ macOS ネイティブで Metal GPU 推論**します。Docker Desktop上のLinux OllamaコンテナからMetalは利用できません。10k/100kのJAX学習もDockerではCPUのままです。
+**Hybrid architecture for an Apple Silicon Mac Studio:** React, FastAPI, and JAX/GraphSAGE run in Docker, while **only Ollama/Qwen3 runs natively on macOS for Metal GPU inference**. Metal is not available to Linux-based Ollama containers running under Docker Desktop. The 10k/100k JAX training workloads also remain CPU-only when run in Docker.
 
-v11からの主な変更：
+Main changes since v11:
 
-- Dockerの`ollama`/`model-pull`への固定依存をデフォルトComposeから除去し、`host.docker.internal:11434`に接続。Docker版CPU Ollamaは`compose.cpu.yaml`で明示的に起動可能。
-- 1回のリクエストで最大9回の逐次推論を待つ代わりに、`POST /compare-jobs`→`GET /compare-jobs/{job_id}`で進捗をポーリング。UIは実行段階を表示します。**APIコンテナが再起動すると進行中ジョブは失われます**（メモリ内ジョブ管理）。
-- Ollama単発のタイムアウトは900秒（設定可能）、モデルコンテキストは8,192、個別説明と横断比較の生成上限はそれぞれ650/850 tokens（変更可能）。入力も短縮し、4方式の横断比較がコンテキストを溢れにくく調整。
-- 合成データならUIに明確に **Synthetic demo** と表示。`GNN_RAG_DATASET=hetionet`で再学習しない限り、**HetionetのGraph Explorerではありません**。`GET /health`に`dataset_matches`、`GET /info`に学習済みデータソースを表示。
-- Qwenが「検索されたが採用されなかったリンクは存在しない」と断定しないよう、プロンプトで未選択の観測エッジと存在しないエッジを区別します。生成文は依然未検証の仮説であり、医学的な正確性は保証しません。
-- `GET /ollama-status`でサーバー接続とモデル有無を検査（**GPU稼働はMac側で`ollama ps`による確認が必要**）。
-- 4方式の回答・シーケンス解釈・横断比較・PDF/JSON保存と10k/100k別ジョブのPDFは維持。
+- Removed the hard dependency on Docker's `ollama`/`model-pull` services from the default Compose configuration. The application now connects to `host.docker.internal:11434`. Docker-based CPU Ollama can still be started explicitly using `compose.cpu.yaml`.
+- Instead of making a single request wait for up to nine sequential inference calls, progress is polled through `POST /compare-jobs` → `GET /compare-jobs/{job_id}`. The UI displays the current execution stage. **In-progress jobs are lost if the API container restarts** because job state is stored in memory.
+- The timeout for an individual Ollama call is 900 seconds (configurable). The model context is 8,192 tokens, and the generation limits for individual explanations and cross-method comparisons are 650 and 850 tokens, respectively (both configurable). Inputs have also been shortened to reduce the risk of context overflow during the four-method comparison.
+- When synthetic data is used, the UI explicitly displays **Synthetic demo**. **It is not a Hetionet Graph Explorer unless the model is retrained with `GNN_RAG_DATASET=hetionet`.** `GET /health` exposes `dataset_matches`, and `GET /info` reports the data source used for training.
+- Prompts distinguish observed edges that were retrieved but not selected from edges that do not exist, preventing Qwen from asserting that unselected retrieved links are nonexistent. Generated text still consists of **unverified hypotheses**, and medical accuracy is not guaranteed.
+- `GET /ollama-status` checks server connectivity and model availability (**actual GPU usage must be verified on the Mac using `ollama ps`**).
+- Four-method answers, sequence interpretation, cross-method comparison, PDF/JSON export, and the separate 10k/100k study PDF are retained.
 
-## 1. macOSでネイティブOllamaを起動
+## 1. Start Ollama natively on macOS
 
-[OllamaのmacOS版](https://ollama.com/download/mac) を導入してください。標準設定は127.0.0.1のみで待ち受けるため、**Docker Desktopから接続する場合のみ**信頼できるネットワーク上で次のように設定します。
+Install [Ollama for macOS](https://ollama.com/download/mac). By default, Ollama listens only on `127.0.0.1`. **Only when connecting from Docker Desktop**, configure it as follows on a trusted network.
 
 ```bash
-# CLIとして起動する場合（Ollamaアプリがすでに起動していれば先に終了する）
+# For CLI startup (quit the Ollama app first if it is already running)
 OLLAMA_HOST=0.0.0.0:11434 OLLAMA_CONTEXT_LENGTH=8192 ollama serve
 ```
 
-GUIアプリ版で動かす場合、次の設定後にOllamaアプリを終了・再起動します。
+If you use the GUI app, set the environment variables below, then completely quit and restart Ollama.
 
 ```bash
 launchctl setenv OLLAMA_HOST '0.0.0.0:11434'
 launchctl setenv OLLAMA_CONTEXT_LENGTH '8192'
-# Dock/Menu barなどからOllamaを完全終了→再起動
+# Fully quit Ollama from the Dock/Menu Bar, then restart it
 open -a Ollama
 ```
 
-`0.0.0.0`での待受はLAN上にも接続が開く場合があります。**Ollamaは標準で認証なし**です。Macファイアウォールで不要なLANアクセスを遮断し、公開Wi-Fiやポート転送には公開しないでください。代替として限定したリバースプロキシ等の構成も検討してください。
+Listening on `0.0.0.0` may also expose the service to other devices on your LAN. **Ollama does not enable authentication by default.** Use the Mac firewall to block unnecessary LAN access. Do not expose the service over public Wi-Fi or through port forwarding. Consider a restricted reverse-proxy configuration as an alternative.
 
-別ターミナルで：
+In another terminal:
 
 ```bash
 ollama pull qwen3:1.7b
 ollama run qwen3:1.7b '日本語で短く回答してください。'
-ollama ps                       # 実際のPROCESSOR欄に100% GPU等が出ることを確認
+# The prompt above asks the model to respond briefly in Japanese.
+ollama ps                       # Verify that the PROCESSOR column actually shows 100% GPU or similar
 curl -fsS http://127.0.0.1:11434/api/tags
 ```
 
-**Macで`ollama ps`を実行してください。Dockerの`docker compose exec ollama ollama ps`ではありません。**
+**Run `ollama ps` on the Mac, not `docker compose exec ollama ollama ps` inside Docker.**
 
-## 2. v14のDocker Composeを起動
+## 2. Start the v14 Docker Compose stack
 
-このZIPを解凍した`GNN-RAG-v14-metal/`で実行します。v11等をまだ動かしている場合、旧ディレクトリで`docker compose down`を実行してください。プロジェクトを切り替えるだけで古いプロジェクトのコンテナは停止しません。
+Run these commands in the extracted `GNN-RAG-v14-metal/` directory. If an older version such as v11 is still running, execute `docker compose down` in that version's directory. Simply switching project directories does not stop containers belonging to the previous project.
 
 ```bash
 [ -f .env ] || cp .env.example .env
-# 以前の.envを再利用する場合は下記すべてを確認し、必要なら変更
+# If reusing an older .env, check all of the following and change them as necessary
 # GNN_RAG_DATASET=hetionet
 # HETIONET_MAX_NODES=5000
 # HETIONET_TARGET_TRIPLES=100000
@@ -59,111 +60,110 @@ curl -fsS http://127.0.0.1:11434/api/tags
 grep -E '^(GNN_RAG_DATASET|HETIONET_MAX_NODES|HETIONET_TARGET_TRIPLES|GNN_RAG_OLLAMA_URL|GNN_RAG_OLLAMA_TIMEOUT|GNN_RAG_OLLAMA_NUM_CTX)=' .env
 
 docker compose config --quiet
-# ここにollamaとmodel-pullがないのがMetalデフォルト構成の正しい状態
+# The absence of ollama and model-pull is expected in the default Metal configuration
 docker compose config --services
-# テスト
+# Run tests
 docker compose --profile test run --build --rm test
-# 起動（Hetionetの必要な前処理・学習も実行）
+# Start the stack (also performs the required Hetionet preprocessing and training)
 docker compose up --build -d --force-recreate --remove-orphans
 docker compose ps -a
 ```
 
-> `.env` が以前の `GNN_RAG_DATASET=synthetic` のままの場合、通常アプリも合成データで学習し直します。**10k/100kのstudy結果がHetionetでもGraph Explorerは別の学習成果物です。** 明示的に変更してください。公式原本が必要なら自動取得（`HETIONET_AUTO_DOWNLOAD=1`）、または`data/archives/`に原本ZIPを置いてください。
+> If `.env` still contains the old setting `GNN_RAG_DATASET=synthetic`, the main application will train on synthetic data again. **Even when the 10k/100k study uses Hetionet, Graph Explorer uses a separate trained artifact.** Explicitly update the setting. If the original official dataset is required, enable automatic download with `HETIONET_AUTO_DOWNLOAD=1`, or place the original ZIP archive in `data/archives/`.
 
-UI: http://127.0.0.1:5173/　 API: http://127.0.0.1:8000/docs
+UI: http://127.0.0.1:5173/  API: http://127.0.0.1:8000/docs
 
-## 3. ネイティブGPU接続と学習成果物の診断
+## 3. Diagnose native GPU connectivity and trained artifacts
 
 ```bash
 curl -fsS http://127.0.0.1:8000/health
 curl -fsS http://127.0.0.1:8000/info
 curl -fsS http://127.0.0.1:8000/ollama-status
-# コンテナ内からMacネイティブOllamaに到達できるか
+# Check whether the container can reach Ollama running natively on the Mac
  docker compose exec api python -c "import json,urllib.request; print(json.load(urllib.request.urlopen('http://host.docker.internal:11434/api/tags',timeout=8)))"
-# Mac側で実際のGPU稼働確認
+# Verify actual GPU usage on the Mac
 ollama ps
 ```
 
-`/health` が`dataset_matches: false`なら環境変数と学習成果物が不一致です。`.env`を変更しただけでは既存成果物は変わりません。`docker compose up --build -d --force-recreate`で学習サービスを再実行してください。
+If `/health` reports `dataset_matches: false`, the environment variables and trained artifacts do not match. Editing `.env` alone does not update existing artifacts. Rerun the training service using `docker compose up --build -d --force-recreate`.
 
-`/ollama-status` が`model_present: false`ならMacで `ollama pull qwen3:1.7b` を実行してください。`reachable: false`ならMac Ollamaの待ち受け・ファイアウォールを確認してください。
+If `/ollama-status` reports `model_present: false`, run `ollama pull qwen3:1.7b` on the Mac. If it reports `reachable: false`, check the native Ollama listener and the Mac firewall.
 
-## 4. 4方式の回答・進捗とPDF
+## 4. Four-method answers, progress tracking, and PDF export
 
-Graph Explorerで「4方式を解釈・横断比較しPDF保存」を押すと、バックエンドジョブが進行します。原回答→各シーケンス解釈・説明→最後の横断比較→PDF保存の順です。元の出力が取得できても、Qwenの解釈や横断比較に失敗する場合は**エラーを明記して部分成果物を保存**します。
+Click **“Interpret and compare all four methods, then save as PDF”** in Graph Explorer to start a backend job. The steps run in this order: original answers → interpretation and explanation of each sequence → final cross-method comparison → PDF export. If Qwen fails during interpretation or comparison even after the original outputs have been obtained, the application **explicitly reports the error and saves partial artifacts**.
 
-保存先はプロジェクト直下：
+Files are saved in the project root:
 
 - `GNN_RAG_four_way_answers.pdf`
 - `GNN_RAG_four_way_answers.json`
 
-APIから直接確認する場合：
+To check the API directly:
 
 ```bash
 curl -fsS http://127.0.0.1:8000/ollama-status
-# Reactが利用するAPI: POST /compare-jobs, GET /compare-jobs/{job_id}
+# Endpoints used by React: POST /compare-jobs, GET /compare-jobs/{job_id}
 ```
 
-ジョブはAPIプロセスのメモリに保存します。**実行途中に`docker compose down`やAPIの再起動をしないでください**。進行中ジョブを再開する永続キューはありません。同時比較は1件に制限しています。完了PDFはホスト上の固定名で保存されるため、再実行すると上書きされます。
+Jobs are stored in the API process's memory. **Do not run `docker compose down` or restart the API while a job is in progress.** There is no persistent queue that can resume interrupted jobs. Only one comparison job can run at a time. Completed PDFs are saved under a fixed filename on the host and will be overwritten by subsequent runs.
 
-**コンテキストと実行時間**：`GNN_RAG_OLLAMA_NUM_CTX`はOllamaリクエストごとに8,192を指定します。これはモデルが必ず収まることを保証するものではなく、長い根拠が入力される際の切断を抑える設定です。Ollamaが応答しない場合は各呼び出し900秒でエラーになります。CPUフォールバックでは非常に遅くなることがあります。
+**Context and execution time:** `GNN_RAG_OLLAMA_NUM_CTX` sets the context size to 8,192 for each Ollama request. This does not guarantee that every input will fit; the setting is intended to reduce truncation when lengthy evidence is supplied. If Ollama does not respond, each individual call times out after 900 seconds. CPU fallback can be extremely slow.
 
-## 5. 10k/100k学習比較（独立したジョブ、Metal対象外）
+## 5. Compare 10k/100k training runs (separate job; Metal not used)
 
 ```bash
 docker compose --profile study run --build --rm study
 ls -lh Hetionet_10k_100k_comparison.pdf
 ```
 
-これはJAXのCPU学習であり、Plain Qwenの生成文とMRR@10を直接比較する実験ではありません。
+This experiment trains JAX models on the CPU. It does **not** directly compare MRR@10 against text generated by Plain Qwen.
 
-## 6. Docker内Ollama（CPU）へのフォールバック
+## 6. Fallback to Ollama inside Docker (CPU)
 
-Metalが使えない環境でのみ、追加Composeファイルを使ってCPU Ollamaを起動できます。Mac上では**GPUにはなりません**。
+Only in environments where Metal is unavailable, use the additional Compose file to start CPU-based Ollama. **This will not provide GPU acceleration on the Mac.**
 
 ```bash
 docker compose -f compose.yaml -f compose.cpu.yaml up --build -d --remove-orphans
 docker compose -f compose.yaml -f compose.cpu.yaml ps -a
 ```
 
-CPU/Metalの切り替え時は先に`docker compose down`（CPUスタックなら同じ`-f`指定でdown）してください。モデル保存先はMacネイティブとDocker内で別々です。`--volumes`を付けるとDocker側の保存モデルが消えるので通常は避けてください。
+Before switching between CPU and Metal configurations, run `docker compose down` (include the same `-f` options when stopping the CPU stack). Native macOS Ollama and Docker-based Ollama have separate model-storage locations. Avoid adding `--volumes` under normal circumstances, as it removes the models stored on the Docker side.
 
-## 7. 技術的・臨床的な制限
+## 7. Technical and clinical limitations
 
-- 元のHetionetリンクは因果や診断・治療効果を保証しません。未選択のエッジも、観測済みなら存在しています。LLMの仮説はKGの確定情報ではありません。
-- Plain QwenにはKGシーケンスを渡さず、MRR@10等のリンク予測指標には含めません。
-- Reactに表示されるデータセット名は `run_summary.json` 由来であり、別の`study`成果物名ではありません。
-- DockerとMacホストのネットワークは外部公開を避けて使用してください。
-- ネイティブOllamaのMetal使用可否と速度改善は実機で`ollama ps`により確認が必要で、ZIPの作成環境ではGPU統合試験を実施していません。
+- Links in the original Hetionet data do **not** establish causality, diagnoses, or treatment effects. Observed edges exist even when they are not selected. LLM-generated hypotheses are not confirmed knowledge-graph facts.
+- Plain Qwen is not given KG sequences and is not included in link-prediction metrics such as MRR@10.
+- The dataset name displayed in React comes from `run_summary.json`, not from a separate `study` artifact.
+- Avoid exposing Docker or Mac host network services externally.
+- Actual Metal availability and potential speed gains from native Ollama must be verified with `ollama ps` on the target Mac. GPU integration testing was not performed in the environment used to build the ZIP archive.
 
-詳しい技術背景は `docs/v11_cross_method.md` 等を参照してください。v14では`compose.yaml`がMac Metalを優先し、旧CPU構成は明示的な補助ファイルに分離しています。
+For more detailed technical background, see `docs/v11_cross_method.md` and related documentation. In v14, `compose.yaml` prioritizes native Mac Metal, while the older CPU configuration is separated into an explicit supplemental Compose file.
 
-## 8. v13から継承した型付き中間表現と根拠監査
+## 8. Typed intermediate representations and evidence auditing inherited from v13
 
-v12の表示には、BFS/GNN/融合で実際のTrainエッジが取得されているにもかかわらず、Qwenによる説明が「KGシーケンス未提供」と誤記する問題がありました。またPlain Qwenの自由生成を、横断比較のQwenが登録済みHetionetエッジと混同する例がありました。
+The v12 interface had an issue where Qwen-generated explanations incorrectly stated that **“no KG sequence was provided”** even when actual training edges had been retrieved by BFS, GNN, or the hybrid method. There were also cases where Qwen, while generating the cross-method comparison, confused Plain Qwen's unconstrained output with registered Hetionet edges.
 
-v13以降、`src/gnn_rag/structured_paths.py` に**非生成的な中間表現**を追加しました。検索で得た各パスを、`EvidenceFact` から検証してから以下をJSONに確定保存します：
+Starting in v13, a **non-generative intermediate representation** was added in `src/gnn_rag/structured_paths.py`. Each retrieved path is validated against `EvidenceFact` before the following fields are deterministically stored in JSON:
 
 - `path_id`, `traversal_node_ids`, `steps[].hop`, `steps[].evidence_id`
 - `source_id/name/kind`, `relation_code/label`, `provenance`, `target_id/name/kind`
-- `traversal_direction` (`forward` / `reverse`)、`selected_for_answer`、`observed_train_edge=true`
+- `traversal_direction` (`forward` / `reverse`), `selected_for_answer`, `observed_train_edge=true`
 
-エッジの登録向き（source→target）と探索方向は別物です。未選択のTrainエッジも存在している場合は「未採用（エッジは存在）」と表示します。未知のエッジや不連続なホップは破棄し、連続パスを捏造しません。**この中間表現はQwenの解釈文から生成せず、プログラムが検証・作成します**。
+An edge's registered direction (`source` → `target`) is distinct from the traversal direction. An observed training edge that is not selected is labeled **“Not selected (edge exists)”**. Unknown edges and discontinuous hops are discarded; the system does not fabricate continuous paths. **This intermediate representation is not generated from Qwen's interpretive text: it is validated and constructed programmatically.**
 
-ReactとPDFではまず「確定的な中間表現」を表示し、その下にQwenの未検証解釈・説明を別に表示します。Qwenがパスがあるのに「KGシーケンス未提供」と述べた場合、誤解釈と検出して明示します。Qwenへの入力には型、関係ラベル、出典、採否、探索方向を渡します。
+In React and the PDF, the **deterministically established intermediate representation** appears first, followed separately by Qwen's unverified interpretations and explanations. If Qwen claims that no KG sequence was provided despite the existence of a path, the system detects and explicitly flags this as a misinterpretation. Qwen receives the types, relation labels, provenance, selection status, and traversal directions as input.
 
-横断比較の前に `method_audit` をプログラムが確定作成して表示します。Plain Qwenは`no_kg_retrieval`で選択済みTrainエッジ0件、残り3方式はそれぞれ独立した`observed_train_kg`の選択済み根拠を保持します。異なる関係型（例：DlAとAeG）を同じ文献共起として扱わないようにプロンプトも修正しています。**Qwenの最終横断比較文そのものは未検証の生成文であり、必ずしも誤解釈がなくなるとは保証できません。確定した監査結果を優先して読んでください**。
+Before the cross-method comparison, the program deterministically constructs and displays `method_audit`. Plain Qwen has `no_kg_retrieval` and zero selected training edges, while each of the other three methods retains its own selected `observed_train_kg` evidence. The prompt was also revised so that different relation types (for example, `DlA` and `AeG`) are not treated as the same kind of literature co-occurrence. **Qwen's final cross-method comparison is itself unverified generated text, and there is no guarantee that all misinterpretations have been eliminated. Give priority to the deterministic audit results.**
 
-v14の確認対象テスト：`PYTHONPATH=src python -m pytest -q tests/test_v14_structured_generation.py tests/test_v13_structured_intermediate.py tests/test_v12_metal_async.py tests/test_v11_cross_comparison.py tests/test_v10_explanations.py`。実機のMetal推論とDockerの統合テストは利用するMacで再確認してください。
+Tests targeted for verification in v14: `PYTHONPATH=src python -m pytest -q tests/test_v14_structured_generation.py tests/test_v13_structured_intermediate.py tests/test_v12_metal_async.py tests/test_v11_cross_comparison.py tests/test_v10_explanations.py`. Native Metal inference and Docker integration should be tested again on the target Mac.
 
+## v14: Safeguards for Qwen JSON output and factual consistency
 
-## v14: Qwen JSON出力・事実照合の保護
+- Individual explanations must conform to a JSON Schema requiring `sequence_interpretation` and `explanation`. Incomplete or truncated JSON is rejected.
+- If parsing fails or validation is violated, the system shortens the input and retries only once. If the retry also fails, it saves `explanation_error` and `explanation_raw_response` (up to 4,096 characters) in the local `GNN_RAG_four_way_answers.json`.
+- Prompts for KG-based methods do not include the **“no path”** instruction intended only for Plain Qwen. Python preserves the original retrieved paths; the LLM is restricted to interpretation and hypothesis generation.
+- During the final comparison, Python compares each method's selected edges using `(source,relation,target)`. Method-specific `E#` identifiers, which are renumbered independently, are not used as cross-method identifiers.
+- Qwen's final generation contains only two JSON fields: a brief hypothesis and its limitations. Python displays the factual evidence list and renders it into the PDF. If output is truncated, it is retained with `cross_comparison_status=error`.
+- Diagnostic responses remain in JSON saved to `GNN_RAG_COMPARISON_DIR`. Before sharing those files, check whether they contain sensitive information when necessary.
 
-- 個別説明はJSON Schemaで`sequence_interpretation`/`explanation`を要求し、不完全・切断されたJSONを受理しない。
-- 解析失敗・検証違反時は、入力を短縮して1度だけ再試行。再失敗時は`explanation_error`と`explanation_raw_response`（最大4096文字）をローカルの`GNN_RAG_four_way_answers.json`へ保存。
-- KG方式のプロンプトにPlain Qwen専用の「経路なし」指示を混ぜない。検索済み経路の原文はPythonが維持し、LLMは解釈・仮説のみに限定。
-- 最終比較では各方式の選択済みエッジをPythonが`(source,relation,target)`で比較。方法ごとに再付番される`E#`を横断識別子に使用しない。
-- Qwenの最終生成は短い仮説と限界の二項目JSONだけ。事実一覧はPythonが表示・PDF化。出力切断時は`cross_comparison_status=error`で保持。
-- `GNN_RAG_COMPARISON_DIR`の保存先JSONに診断応答が残るため、必要な場合は機微情報の有無を確認した上で共有すること。
-
-See `docs/v14_validation.md` for v13 failure analysis, v14 changes and reproducible tests.
+See `docs/v14_validation.md` for the v13 failure analysis, v14 changes, and reproducible tests.
